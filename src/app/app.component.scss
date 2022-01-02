@@ -1,11 +1,20 @@
-fluent-button {
-    padding-left: var(--toolbar-item-gap);
+fast-button {
+    margin-left: var(--toolbar-item-gap);
 }
 
 #r159-toolbar {
     border-bottom: calc(var(--focus-stroke-width) * 1px) solid var(--accent-fill-rest);
     position: fixed;
     z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    [slot="label"] {
+        //font-family: MuseoModerno, sans-serif;
+        font-size: var(--type-ramp-plus-2-font-size);
+        font-weight: 500;
+    }
 }
 
 #r159-content {

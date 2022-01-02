@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
 
+@font-face { font-family: Rubik; src: url('/assets/webfonts/Rubik-VariableFont_wght.ttf'); }
+@font-face { font-family: Rubik; src: url('/assets/webfonts/Rubik-Italic-VariableFont_wght.ttf'); font-style: italic; }
+
 body {
   font-family: var(--body-font);
   color: var(--neutral-foreground-rest);
@@ -7,7 +10,7 @@ body {
   margin: 0;
 }
 
-fluent-badge {
+fast-badge {
   --badge-fill-rit-orange: #f36e21;
   --badge-fill-rit-brown: #513127;
   --badge-fill-rit-red: #8F0006;

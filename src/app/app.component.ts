@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import {
   baseLayerLuminance,
   StandardLuminance
-} from '@fluentui/web-components';
+} from "@microsoft/fast-components";
 
 @Component({
   selector: 'app-root',
