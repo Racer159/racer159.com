@@ -1,0 +1,43 @@
+fluent-button {
+    padding-left: var(--toolbar-item-gap);
+}
+
+#r159-toolbar {
+    border-bottom: calc(var(--focus-stroke-width) * 1px) solid var(--accent-fill-rest);
+    position: fixed;
+    z-index: 100;
+}
+
+#r159-content {
+    padding-top: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit) * 1px) +
+                       (var(--design-unit) * 1px) + (var(--design-unit) * 1px) + var(--focus-stroke-width) * 1px);
+}
+
+#r159-copyright {
+    position: fixed;
+    z-index: 100;
+    bottom: 0px;
+    left: 0px;
+    padding: calc(var(--design-unit) * 1px);
+}
+
+#r159-footer {
+    position: fixed;
+    z-index: 100;
+    bottom: 0px;
+    right: 0px;
+    padding: calc(var(--design-unit) * 1px);
+}
+
+// Medium devices (tablets, less than 992px)
+@media (max-width: 999.98px) {
+    #r159-footer, #r159-copyright {
+        position:relative;
+        display: inline-block;
+        margin-top: 16px;
+    }
+
+    #r159-footer {
+        float: right;
+    }
+}

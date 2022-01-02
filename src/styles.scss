@@ -1,0 +1,25 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: var(--body-font);
+  color: var(--neutral-foreground-rest);
+  background-color: var(--neutral-layer-2);
+  margin: 0;
+}
+
+fluent-badge {
+  --badge-fill-rit-orange: #f36e21;
+  --badge-fill-rit-brown: #513127;
+  --badge-fill-rit-red: #8F0006;
+  --badge-fill-rit-gray: #7C878E;
+  --badge-fill-af-blue: #0033A0;
+  --badge-fill-af-silver: #8F8F8C;
+  --badge-fill-ms-red: #F25022;
+  --badge-fill-ms-green: #7FBA00;
+  --badge-fill-ms-blue: #00A4EF;
+  --badge-fill-ms-yellow: #FFB900;
+  --badge-fill-ms-gray: #737373;
+  
+  --badge-color-black: #000000;
+  --badge-color-white: #ffffff;
+}
