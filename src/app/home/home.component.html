@@ -4,8 +4,12 @@
 
 <div id="r159-home-main">
   <div id="r159-home-experience-buttons">
-    <fast-button id="r159-home-experience-left" appearance="accent"><i class="far fa-lg fa-angle-left"></i></fast-button>
-    <fast-button id="r159-home-experience-right" appearance="accent"><i class="far fa-lg fa-angle-right"></i></fast-button>
+    <fast-button id="r159-home-experience-left" appearance="accent" (click)="scrollExperience('left')">
+      <i class="far fa-lg fa-angle-left"></i>
+    </fast-button>
+    <fast-button id="r159-home-experience-right" appearance="accent" (click)="scrollExperience('right')">
+      <i class="far fa-lg fa-angle-right"></i>
+    </fast-button>
   </div>
   <div id="r159-home-experience">
     <fast-card class="r159-flex-sm">
@@ -97,6 +101,7 @@
         <ul>
           <li>Design, Develop, Test, Deploy, applications for the Defense Innovation Unit</li>
           <li>Manage and coordinate various project activities using agile methodologies</li>
+          <li>Another Point</li>
         </ul>
       </div>
     </fast-card>

@@ -1,3 +1,14 @@
+img {
+    /* IE, only works on <img> tags */
+    -ms-interpolation-mode: nearest-neighbor;
+    /* Firefox */
+    image-rendering: crisp-edges;
+    /* Chromium + Safari */
+    image-rendering: pixelated;
+    /* Maintain Aspect Ratio */
+    object-fit: contain;
+}
+
 #r159-home-banner {
     position: relative;
     overflow: hidden;
@@ -6,14 +17,7 @@
     img {
         margin-left: 50%;
         transform: translateX(-50%);
-        width: 300%;
-
-        /* IE, only works on <img> tags */
-        -ms-interpolation-mode: nearest-neighbor;
-        /* Firefox */
-        image-rendering: crisp-edges;
-        /* Chromium + Safari */
-        image-rendering: pixelated;
+        height: 50vh;
     }
 }
 
@@ -26,17 +30,6 @@
     gap: 16px;
     width: 1500px;
     margin: 16px auto 32px auto;
-
-    img {
-        /* IE, only works on <img> tags */
-        -ms-interpolation-mode: nearest-neighbor;
-        /* Firefox */
-        image-rendering: crisp-edges;
-        /* Chromium + Safari */
-        image-rendering: pixelated;
-
-        object-fit: contain;
-    }
 }
 
 
@@ -74,10 +67,6 @@
 
     .r159-flex-lg {
         flex-flow: column;
-    }
-
-    #r159-home-banner img {
-        width: 500%;
     }
 }
 
@@ -147,8 +136,4 @@
 
 fast-badge {
     margin-right: calc(var(--design-unit) * 1px);
-}
-
-fast-badge[fill=rit-gray] {
-    margin-bottom: calc(var(--design-unit) * 1px);
 }
