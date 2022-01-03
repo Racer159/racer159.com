@@ -10,6 +10,25 @@ body {
   margin: 0;
 }
 
+h2 {
+  font-weight: 500;
+}
+
+a {
+  color: var(--accent-foreground-rest);
+}
+a:hover {
+  color: var(--accent-foreground-hover);
+}
+
+a:active {
+  color: var(--accent-foreground-active);
+}
+
+a:focus {
+  color: var(--accent-foreground-focus);
+}
+
 fast-badge {
   --badge-fill-rit-orange: #f36e21;
   --badge-fill-rit-brown: #513127;
