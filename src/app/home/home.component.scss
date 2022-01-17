@@ -13,11 +13,17 @@ img {
     position: relative;
     overflow: hidden;
     width: 100%;
+    border-bottom-right-radius: calc(var(--control-corner-radius) * 1px);
+    border-bottom-left-radius: calc(var(--control-corner-radius) * 1px);
+    height: 50vh;
+
 
     img {
         margin-left: 50%;
         transform: translateX(-50%);
-        height: 50vh;
+        background-color: var(--accent-fill-rest);
+        transition: background-color var(--anim-length) var(--anim-style);
+        height: 100%;
     }
 }
 
@@ -88,6 +94,10 @@ img {
 
 #r159-home-experience-right {
     float: right;
+}
+
+#r159-home-experience::-webkit-scrollbar {
+    display: none;
 }
 
 #r159-home-experience {

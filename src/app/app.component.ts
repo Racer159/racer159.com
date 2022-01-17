@@ -1,8 +1,15 @@
 import { Component } from '@angular/core';
 import {
   baseLayerLuminance,
-  StandardLuminance
+  StandardLuminance,
+  SwatchRGB,
+  PaletteRGB,
+  accentPalette
 } from "@microsoft/fast-components";
+
+import {
+  parseColorHexRGB
+} from '@microsoft/fast-colors';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +19,13 @@ import {
 export class AppComponent {
   r159Body = document.getElementById("r159-body") as HTMLElement;
   darkMode = baseLayerLuminance.getValueFor(this.r159Body) < 0.5 ? true : false;
-
-  toggleLightMode = () => {
+  lightModeToggleCount = 0;
+  colors = ["#ff0000", "#ff7f00", "#ffd700", "#008000", "#4d4dff", "#4b0082", "#9400d3"];
+  colorsInterval: undefined | number;
+  currentColor = 0;
+   // parseColorHexRGB("#0159A0")!
+  toggleLightMode() {
+    this.lightModeToggleCount++;
     this.darkMode = !this.darkMode;
 
     if (this.darkMode) {
@@ -21,5 +33,27 @@ export class AppComponent {
     } else {
       baseLayerLuminance.setValueFor(this.r159Body, StandardLuminance.LightMode);
     }
+
+    if (this.lightModeToggleCount > 7) {
+      this.lightModeToggleCount = 0;
+      if (this.colorsInterval) {
+        window.clearInterval(this.colorsInterval);
+        accentPalette.setValueFor(this.r159Body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB("#0159A0")!)));
+        this.colorsInterval = undefined;
+      } else {
+        this.colorsInterval = window.setInterval(() => {
+          accentPalette.setValueFor(this.r159Body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB(this.colors[this.currentColor])!)));
+          if (this.currentColor < this.colors.length - 1) {
+            this.currentColor++;
+          } else {
+            this.currentColor = 0;
+          }
+        }, 300);
+      }
+    }
   };
+
+  gotoURL(url: string) {
+    window.location.href = url;
+  }
 }

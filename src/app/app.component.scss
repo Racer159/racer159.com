@@ -1,9 +1,6 @@
-fast-button {
-    margin-left: var(--toolbar-item-gap);
-}
-
 #r159-toolbar {
     border-bottom: calc(var(--focus-stroke-width) * 1px) solid var(--accent-fill-rest);
+    transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style), border-bottom var(--anim-length) var(--anim-style);
     position: fixed;
     z-index: 100;
     display: flex;

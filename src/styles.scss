@@ -8,6 +8,9 @@ body {
   color: var(--neutral-foreground-rest);
   background-color: var(--neutral-layer-2);
   margin: 0;
+  --anim-length: 250ms;
+  --anim-style: linear;
+  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
 }
 
 h2 {
@@ -27,6 +30,23 @@ a:active {
 
 a:focus {
   color: var(--accent-foreground-focus);
+}
+
+fast-card {
+  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
+}
+
+fast-toolbar {
+  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
+}
+
+fast-divider {
+  transition: border-top var(--anim-length) var(--anim-style);
+}
+
+fast-button {
+  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
+  margin-left: var(--toolbar-item-gap);
 }
 
 fast-badge {
