@@ -6,13 +6,15 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  @ViewChild('r159HomeExperience') r159HomeExperience: ElementRef | undefined;
+  @ViewChild('r159HomeExperience') r159HomeExperience: ElementRef<HTMLDivElement> | undefined;
 
   experienceScrollData = {
     scrollLeft: 0,
     scrollWidth: 2,
     offsetWidth: 1
   }
+  scrolling: undefined | number;
+  scrollTo = 0;
 
   constructor() { }
 
@@ -21,25 +23,35 @@ export class HomeComponent implements OnInit {
   scrollExperience(direction: string) {
     if (this.r159HomeExperience) {
       const cardWidth = 396;
-      let scroll = this.r159HomeExperience.nativeElement.scrollLeft;
-      let leftover = scroll % cardWidth;
-  
-      if (!leftover) {
+      const offset = this.r159HomeExperience.nativeElement.offsetWidth;
+      const scroll = this.r159HomeExperience.nativeElement.scrollLeft;
+
+      const prevCard = Math.floor((scroll - 1) / cardWidth);
+      const nextCard = Math.floor((scroll + offset + 16) / cardWidth);
+
+      if (this.scrolling) {
+        window.clearInterval(this.scrolling);
         if (direction === 'right') {
-          scroll += cardWidth;
+          this.scrollTo++;
         } else if (direction === 'left') {
-          scroll -= cardWidth;
+          this.scrollTo--;
         }
       } else {
         if (direction === 'right') {
-          scroll += (cardWidth - leftover);
+          this.scrollTo = nextCard;
         } else if (direction === 'left') {
-          scroll -= leftover;
+          this.scrollTo = prevCard;
         }
       }
-  
-      this.r159HomeExperience.nativeElement.scroll({top:0, left: scroll, behavior:'smooth'});
-      console.log(this.r159HomeExperience.nativeElement);
+      
+      this.scrollTo = this.scrollTo > -1 ? this.scrollTo : 0;
+      this.scrollTo = this.scrollTo < this.r159HomeExperience.nativeElement.children.length ? this.scrollTo : this.r159HomeExperience.nativeElement.children.length - 1;
+
+      this.r159HomeExperience.nativeElement.children[this.scrollTo].scrollIntoView({behavior:'smooth', block: 'nearest'});
+
+      this.scrolling = window.setTimeout(() => {
+        this.scrolling = undefined;
+      },  600);
     }
   }
 
