@@ -27,53 +27,23 @@ img {
     }
 }
 
-// XX-Large devices (larger desktops)
-// No media query since the xxl breakpoint has no upper bound on its width
 #r159-home-main {
     display: flex;
     flex-flow: row wrap;
     align-items: flex-start;
-    gap: 16px;
-    width: 1500px;
-    margin: 16px auto 32px auto;
+    gap: 24px;
+    max-width: 1680px;
+    width: calc(100vw - 200px);
+    margin: 48px auto;
 }
 
-
-// X-Large devices (large desktops, less than 1400px)
-@media only screen and (max-width: 1699.98px) {
-    #r159-home-main {
-        width: 1200px;
-    }
-
-    .r159-flex-lg{
-        .square { display: inline-block !important; }
-        .wide { display: none; }
-    }
-}
-
-// Large devices (desktops, less than 1200px)
-@media only screen and (max-width: 1399.98px) { 
-    #r159-home-main {
-        width: 800px;
-    }
-
-    .r159-flex-lg {
-        flex-flow: column;
-        .square { display: none !important; }
-        .wide { display: inline-block; }
-    }
-}
-
-// Medium devices (tablets, less than 992px)
-@media (max-width: 999.98px) {
-    #r159-home-main {
-        width: calc(100vw - 32px);
-        margin: 0 16px;
-    }
-
-    .r159-flex-lg {
-        flex-flow: column;
-    }
+#r159-home-about {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    justify-content: center;
+    padding: 0 32px;
 }
 
 #r159-home-experience-buttons {
@@ -126,21 +96,31 @@ img {
     }
 }
 
-.r159-flex-lg {
-    flex-basis: 100%;
-    display: flex;
-    justify-content: center;
+.r159-about-photo {
+    background-color: var(--accent-fill-rest);
+    transition: background-color var(--anim-length) var(--anim-style);
+    border-radius: 50%;
+    width: 380px;
+}
 
-    div {
-        background: var(--fill-color);
+@media (max-width: 900px) {
+    #r159-home-main {
+        width: calc(100vw - 32px);
+        margin: 48px 16px 0 16px;
     }
 
-    .square {
-        display: none;
+
+    #r159-home-banner {
+        img {
+            transform: translateX(-42%);
+        }
     }
 
-    img {
-        width: 100%;
+    #r159-home-about {
+        flex-flow: column;
+        gap: 16px;
+        padding: 0;
+        text-align: center;
     }
 }
 

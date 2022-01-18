@@ -19,6 +19,7 @@ h2 {
 
 a {
   color: var(--accent-foreground-rest);
+  transition: color var(--anim-length) var(--anim-style);
 }
 a:hover {
   color: var(--accent-foreground-hover);
@@ -50,6 +51,7 @@ fast-button {
 }
 
 fast-badge {
+  --badge-fill-accent: var(--accent-fill-rest);
   --badge-fill-rit-orange: #f36e21;
   --badge-fill-rit-brown: #513127;
   --badge-fill-rit-red: #8F0006;
@@ -64,4 +66,9 @@ fast-badge {
   
   --badge-color-black: #000000;
   --badge-color-white: #ffffff;
+
+  
+}
+.control {
+  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
 }

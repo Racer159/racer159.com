@@ -39,6 +39,7 @@ export class HomeComponent implements OnInit {
       }
   
       this.r159HomeExperience.nativeElement.scroll({top:0, left: scroll, behavior:'smooth'});
+      console.log(this.r159HomeExperience.nativeElement);
     }
   }
 
