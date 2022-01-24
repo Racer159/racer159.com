@@ -34,10 +34,12 @@ img {
     max-width: 1680px;
     width: calc(100vw - 200px);
     margin: 48px auto;
+    justify-content: center;
 }
 
 #r159-home-about {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     align-items: center;
     gap: 48px;
@@ -118,6 +120,10 @@ img {
 
 .r159-xs {
     display: none;
+}
+
+.spacer {
+    width: 100%;
 }
 
 @media screen and (max-width: 1599.99px) and (min-width: 1200px) {
