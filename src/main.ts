@@ -11,6 +11,8 @@ import {
   fastCard,
   fastBadge,
   fastDivider,
+  fastMenu,
+  fastMenuItem,
   bodyFont,
   baseLayerLuminance,
   StandardLuminance,
@@ -37,7 +39,9 @@ provideFASTDesignSystem().register(
   fastButton(),
   fastCard(),
   fastBadge(),
-  fastDivider());
+  fastDivider(),
+  fastMenu(),
+  fastMenuItem());
 
 const r159Body = document.getElementById("r159-body") as HTMLElement;
 

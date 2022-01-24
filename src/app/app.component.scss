@@ -1,6 +1,5 @@
 #r159-toolbar {
     border-bottom: calc(var(--focus-stroke-width) * 1px) solid var(--accent-fill-rest);
-    transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style), border-bottom var(--anim-length) var(--anim-style);
     position: fixed;
     z-index: 100;
     display: flex;
@@ -11,6 +10,18 @@
         font-size: var(--type-ramp-plus-2-font-size);
         font-weight: 500;
     }
+
+    fast-button {
+        margin-right: var(--toolbar-item-gap);
+    }
+}
+
+#r159-git-menu {
+    z-index: 100;
+    position: fixed;
+    top: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit) * 1px) +
+              (var(--design-unit) * 1px) + (var(--design-unit) * 1px) + var(--focus-stroke-width) * 1px);
+    right: 0px;
 }
 
 #r159-content {
@@ -34,8 +45,7 @@
     padding: calc(var(--design-unit) * 1px);
 }
 
-// Medium devices (tablets, less than 992px)
-@media (max-width: 999.98px) {
+@media (max-width: 799.98px) {
     #r159-footer, #r159-copyright {
         position:relative;
         display: inline-block;
@@ -45,4 +55,16 @@
     #r159-footer {
         float: right;
     }
+}
+
+.hidden {
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility var(--anim-length) var(--anim-style), opacity var(--anim-length) var(--anim-style);
+}
+
+.shown {
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity var(--anim-length) var(--anim-style);
 }

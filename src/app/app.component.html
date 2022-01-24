@@ -3,10 +3,14 @@
   <div slot="end">
     <fast-button appearance="accent" (click)="toggleLightMode()"><i class="far fa-lg fa-lightbulb"></i></fast-button>
     <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"><i class="fab fa-lg fa-linkedin-in"></i></fast-button>
-    <fast-button appearance="stealth" (click)="gotoURL('https://gitlab.com/Racer159')"><i class="fab fa-lg fa-gitlab"></i></fast-button>
-    <fast-button appearance="stealth" (click)="gotoURL('https://github.com/Racer159')"><i class="fab fa-lg fa-github"></i></fast-button>
+    <fast-button [appearance]="showGitMenu ? 'accent' : 'stealth'" (click)="toggleGitMenu()"><i class="fab fa-lg fa-code-branch"></i></fast-button>
   </div>
 </fast-toolbar>
+<fast-menu id="r159-git-menu" [class]="showGitMenu ? 'shown' : 'hidden'">
+  <fast-menu-item (click)="gotoURL('https://gitlab.com/Racer159')"><i class="fab fa-lg fa-gitlab" slot="start"></i><p>GitLab</p></fast-menu-item>
+  <fast-menu-item (click)="gotoURL('https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i><p>GitHub</p></fast-menu-item>
+  <fast-menu-item (click)="gotoURL('https://repo1.dso.mil/wayne.starr')"><i class="fab fa-lg fa-git-alt" slot="start"></i><p>Repo One</p></fast-menu-item>
+</fast-menu>
 
 <div id="r159-content">
   <router-outlet></router-outlet>

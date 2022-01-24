@@ -18,12 +18,17 @@ import {
 })
 export class AppComponent {
   r159Body = document.getElementById("r159-body") as HTMLElement;
+
+  // lightmode handling
   darkMode = baseLayerLuminance.getValueFor(this.r159Body) < 0.5 ? true : false;
   lightModeToggleCount = 0;
   colors = ["#ff0000", "#ff7f00", "#ffd700", "#008000", "#4d4dff", "#4b0082", "#9400d3"];
   colorsInterval: undefined | number;
   currentColor = 0;
-   // parseColorHexRGB("#0159A0")!
+
+  // menu handling
+  showGitMenu = false;
+  
   toggleLightMode() {
     this.lightModeToggleCount++;
     this.darkMode = !this.darkMode;
@@ -55,5 +60,9 @@ export class AppComponent {
 
   gotoURL(url: string) {
     window.location.href = url;
+  }
+
+  toggleGitMenu() {
+    this.showGitMenu = !this.showGitMenu;
   }
 }

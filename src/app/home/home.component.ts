@@ -21,14 +21,18 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void { }
 
   scrollExperience(direction: string) {
-    if (this.r159HomeExperience) {
-      const cardWidth = 396;
+    if (this.r159HomeExperience && this.r159HomeExperience.nativeElement.children.length > 0) {
+      // gather width offset and scroll constants
+      const cardWidth = this.r159HomeExperience.nativeElement.children[0].clientWidth;
+      const cardGap = 16;
       const offset = this.r159HomeExperience.nativeElement.offsetWidth;
       const scroll = this.r159HomeExperience.nativeElement.scrollLeft;
 
-      const prevCard = Math.floor((scroll - 1) / cardWidth);
-      const nextCard = Math.floor((scroll + offset + 16) / cardWidth);
+      // determine the next card and the previous card
+      const nextCard = Math.floor((scroll + offset + 16) / (cardWidth + cardGap));
+      const prevCard = Math.floor((scroll - 1) / (cardWidth + cardGap));
 
+      // if we are scrolling scroll past the current card
       if (this.scrolling) {
         window.clearInterval(this.scrolling);
         if (direction === 'right') {
@@ -44,11 +48,20 @@ export class HomeComponent implements OnInit {
         }
       }
       
+      // rebound scrollTo to the card list
       this.scrollTo = this.scrollTo > -1 ? this.scrollTo : 0;
       this.scrollTo = this.scrollTo < this.r159HomeExperience.nativeElement.children.length ? this.scrollTo : this.r159HomeExperience.nativeElement.children.length - 1;
 
-      this.r159HomeExperience.nativeElement.children[this.scrollTo].scrollIntoView({behavior:'smooth', block: 'nearest'});
+      // calculate the leftmost pixel of the card to scrollTo
+      let left = (this.scrollTo * (cardWidth + cardGap));
+      if (direction === 'right') {
+        left = left - offset + cardWidth; 
+      }
 
+      // scroll to the card
+      this.r159HomeExperience.nativeElement.scroll({behavior:'smooth', left});
+
+      // set a timeout that we started a scroll event
       this.scrolling = window.setTimeout(() => {
         this.scrolling = undefined;
       },  600);

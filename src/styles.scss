@@ -8,9 +8,8 @@ body {
   color: var(--neutral-foreground-rest);
   background-color: var(--neutral-layer-2);
   margin: 0;
-  --anim-length: 250ms;
+  --anim-length: 125ms;
   --anim-style: linear;
-  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
 }
 
 h2 {
@@ -19,7 +18,6 @@ h2 {
 
 a {
   color: var(--accent-foreground-rest);
-  transition: color var(--anim-length) var(--anim-style);
 }
 a:hover {
   color: var(--accent-foreground-hover);
@@ -33,21 +31,8 @@ a:focus {
   color: var(--accent-foreground-focus);
 }
 
-fast-card {
-  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
-}
-
-fast-toolbar {
-  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
-}
-
-fast-divider {
-  transition: border-top var(--anim-length) var(--anim-style);
-}
-
-fast-button {
-  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
-  margin-left: var(--toolbar-item-gap);
+fast-card, fast-toolbar, fast-menu, fast-menu-item, fast-divider, fast-button, a, body {
+  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style), border var(--anim-length) var(--anim-style);
 }
 
 fast-badge {
@@ -66,9 +51,17 @@ fast-badge {
   
   --badge-color-black: #000000;
   --badge-color-white: #ffffff;
-
-  
+  --badge-color-accent: var(--foreground-on-accent-rest);
 }
-.control {
-  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style);
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility var(--anim-length) var(--anim-style), opacity var(--anim-length) var(--anim-style);
+}
+
+.shown {
+  visibility: visible;
+  opacity: 1;
+  transition: visibility 0s, opacity var(--anim-length) var(--anim-style);
 }
