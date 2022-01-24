@@ -65,3 +65,13 @@ fast-badge {
   opacity: 1;
   transition: visibility 0s, opacity var(--anim-length) var(--anim-style);
 }
+
+.print-only {
+  display: none;
+}
+
+@media print {
+  .print-only {
+    display: block;
+  }
+}

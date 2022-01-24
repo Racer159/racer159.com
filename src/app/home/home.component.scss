@@ -198,3 +198,60 @@ img {
 fast-badge {
     margin-right: calc(var(--design-unit) * 1px);
 }
+
+@media print {
+    #r159-home-banner {    
+        img {
+            height: 275px;
+        }
+    }
+
+    #r159-home-main {
+        width: calc(100vw - 32px);
+        margin: 0 16px;
+        display: inline;
+
+        fast-divider {
+            display: none;
+        }
+    }
+
+    #r159-home-about {
+        display: flex;
+        align-items: center;
+        padding: 0;
+    }
+
+    .r159-about-photo {
+        width: 275px;
+    }
+
+    #r159-home-experience {
+        flex-direction: column;
+        display: inline;
+    }
+
+    .r159-flex-sm {
+        flex-basis: 275px;
+        display: block;
+        page-break-inside: avoid;
+        margin: 16px 0;
+
+        img {
+            width: 275px;
+            float: left;
+        }
+
+        div {
+            padding: 0 16px 16px 307px;
+        }
+    }
+
+    .spacer {
+        display: none;
+    }
+
+    fast-button {
+        display: none;
+    }
+}

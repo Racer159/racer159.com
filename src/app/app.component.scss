@@ -14,6 +14,10 @@
     fast-button {
         margin-right: var(--toolbar-item-gap);
     }
+
+    .print-only {
+        margin-right: var(--toolbar-item-gap);
+    }
 }
 
 #r159-git-menu {
@@ -56,7 +60,7 @@
     cursor: pointer;
 }
 
-@media (max-width: 799.98px) {
+@media screen and (max-width: 799.98px) {
     #r159-footer, #r159-copyright {
         position:relative;
         display: inline-block;
@@ -65,5 +69,15 @@
 
     #r159-footer {
         float: right;
+    }
+}
+
+@media print {
+    fast-button {
+        display: none;
+    }
+
+    #r159-toolbar {
+        position: absolute;
     }
 }
