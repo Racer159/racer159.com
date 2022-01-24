@@ -212,18 +212,22 @@ fast-badge {
         display: inline;
 
         fast-divider {
-            display: none;
+            padding-bottom: 24px;
         }
     }
 
     #r159-home-about {
-        display: flex;
-        align-items: center;
+        display: block;
+        page-break-inside: avoid;
         padding: 0;
+        margin-bottom: 32px;
     }
 
     .r159-about-photo {
-        width: 275px;
+        position: absolute;
+        background-color: white;
+        width: 104px;
+        right: 16px;
     }
 
     #r159-home-experience {
@@ -232,18 +236,29 @@ fast-badge {
     }
 
     .r159-flex-sm {
-        flex-basis: 275px;
         display: block;
         page-break-inside: avoid;
-        margin: 16px 0;
+        box-shadow: none;
 
         img {
-            width: 275px;
-            float: left;
+            display: none;
         }
 
         div {
-            padding: 0 16px 16px 307px;
+            padding: 0px;
+
+            fast-badge {
+                float: right;
+                margin-top: -16px;
+            }
+
+            h2 {
+                margin: 5px 0 -6px 0;
+            }
+
+            fast-divider {
+                display: none;
+            }
         }
     }
 

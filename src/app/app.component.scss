@@ -14,10 +14,6 @@
     fast-button {
         margin-right: var(--toolbar-item-gap);
     }
-
-    .print-only {
-        margin-right: var(--toolbar-item-gap);
-    }
 }
 
 #r159-git-menu {
@@ -78,6 +74,13 @@
     }
 
     #r159-toolbar {
+        width: 100vw !important;
         position: absolute;
+        border-radius: 0;
+        padding: var(--toolbar-item-gap) 0;
+    }
+
+    #r159-content {
+        padding-top: 34px;
     }
 }

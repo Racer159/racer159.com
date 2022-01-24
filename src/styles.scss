@@ -74,4 +74,17 @@ fast-badge {
   .print-only {
     display: block;
   }
+
+  .no-print {
+    display: none;
+  }
+
+  body, fast-card, fast-toolbar {
+    background-color: white;
+    color: black;
+  }
+
+  a {
+    color: #013d6d;
+  }
 }
