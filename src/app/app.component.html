@@ -3,7 +3,7 @@
   <div slot="end">
     <fast-button appearance="accent" (click)="toggleLightMode()"><i class="far fa-lg fa-lightbulb"></i></fast-button>
     <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"><i class="fab fa-lg fa-linkedin-in"></i></fast-button>
-    <fast-button [appearance]="showGitMenu ? 'accent' : 'stealth'" (click)="toggleGitMenu()"><i class="fab fa-lg fa-code-branch"></i></fast-button>
+    <fast-button [appearance]="showGitMenu ? 'neutral' : 'stealth'" (click)="toggleGitMenu()"><i class="fab fa-lg fa-code-branch"></i></fast-button>
   </div>
 </fast-toolbar>
 <fast-menu id="r159-git-menu" [class]="showGitMenu ? 'shown' : 'hidden'">
@@ -15,6 +15,8 @@
 <div id="r159-content">
   <router-outlet></router-outlet>
 </div>
+
+<div id="r159-menu-cover" [class]="showGitMenu ? 'shown' : 'hidden'" (click)="toggleGitMenu()"></div>
 
 <div id="r159-copyright">
   © 2022

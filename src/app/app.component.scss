@@ -17,11 +17,20 @@
 }
 
 #r159-git-menu {
-    z-index: 100;
+    z-index: 120;
     position: fixed;
     top: calc(((var(--base-height-multiplier) + var(--density)) * var(--design-unit) * 1px) +
               (var(--design-unit) * 1px) + (var(--design-unit) * 1px) + var(--focus-stroke-width) * 1px);
     right: 0px;
+}
+
+#r159-menu-cover {
+    z-index: 110;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 }
 
 #r159-content {
@@ -55,16 +64,4 @@
     #r159-footer {
         float: right;
     }
-}
-
-.hidden {
-    visibility: hidden;
-    opacity: 0;
-    transition: visibility var(--anim-length) var(--anim-style), opacity var(--anim-length) var(--anim-style);
-}
-
-.shown {
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s, opacity var(--anim-length) var(--anim-style);
 }
