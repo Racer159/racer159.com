@@ -1,5 +1,6 @@
 #!/bin/bash
 
+git worktree add dist/racer159-com gh-pages
 # Build a production version of the site
 ng build
 # Add everything in dist/racer159-com
