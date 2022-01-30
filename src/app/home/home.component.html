@@ -1,23 +1,23 @@
 <div id="r159-home-banner" *ngIf="!unicorn">
-  <img class="r159-lg" src="/assets/vehicle-friends-lg.png"/>
-  <img class="r159-md" src="/assets/vehicle-friends-md.png"/>
-  <img class="r159-sm" src="/assets/vehicle-friends-sm.png"/>
-  <img class="r159-xs" src="/assets/vehicle-friends-xs.png"/>
+  <img class="r159-lg" src="/assets/vehicle-friends-lg.png" alt="Pixelated truck and motorcycles"/>
+  <img class="r159-md" src="/assets/vehicle-friends-md.png" alt="Pixelated truck carrying motorcycles"/>
+  <img class="r159-sm" src="/assets/vehicle-friends-sm.png" alt="Pixelated motorcycles"/>
+  <img class="r159-xs" src="/assets/vehicle-friends-xs.png" alt="Pixelated small motorcycle"/>
 </div>
 
 <div id="r159-home-banner" *ngIf="unicorn">
-  <img class="r159-lg" src="/assets/vehicle-friends-lg-u.png"/>
-  <img class="r159-md" src="/assets/vehicle-friends-md-u.png"/>
-  <img class="r159-sm" src="/assets/vehicle-friends-sm-u.png"/>
-  <img class="r159-xs" src="/assets/vehicle-friends-xs-u.png"/>
+  <img class="r159-lg" src="/assets/vehicle-friends-lg-u.png" alt="Pixelated truck and motorcycles"/>
+  <img class="r159-md" src="/assets/vehicle-friends-md-u.png" alt="Pixelated truck carrying motorcycles"/>
+  <img class="r159-sm" src="/assets/vehicle-friends-sm-u.png" alt="Pixelated motorcycles"/>
+  <img class="r159-xs" src="/assets/vehicle-friends-xs-u.png" alt="Pixelated small motorcycle"/>
 </div>
 
 <div id="r159-home-main">
   <div class="spacer"></div>
   <div id="r159-home-about">
     <div class="r159-flex-about">
-      <img src="/assets/profile.png" class="r159-about-photo" *ngIf="!unicorn"/>
-      <img src="/assets/unicorn.png" class="r159-about-photo" *ngIf="unicorn"/>
+      <img src="/assets/profile.png" class="r159-about-photo" *ngIf="!unicorn" alt="Pixelated motorcycle helment headshot"/>
+      <img src="/assets/unicorn.png" class="r159-about-photo" *ngIf="unicorn" alt="Pixelated unicorn headshot"/>
     </div>
     <div class="r159-flex-about">
       <h1>Wayne Starr</h1>
@@ -65,7 +65,7 @@
   </div>
   <div id="r159-home-experience" #r159HomeExperience (scroll)="updateExperienceScrollData()">
     <fast-card class="r159-flex-sm">
-      <img src="/assets/90cos.png" />
+      <a href="https://www.afhra.af.mil/About-Us/Fact-Sheets/Display/Article/862054/90-cyberspace-operations-squadron-afspc/"><img src="/assets/90cos.png"  alt="Pixelated 90 COS shield logo"/></a>
       <div>
         <h2>90th Cyber Ops. Sq. (90COS)</h2>
         <fast-badge color="white" fill="af-blue">2019-2022</fast-badge>
@@ -75,14 +75,13 @@
         </p>
         <fast-divider></fast-divider>
         <ul>
-          <li>Lead network engineering and support for 3 cyber capability development networks</li>
-          <li>Drive adoption of Agile processes and DevSecOps practices across the squadron</li>
-          <li>Develop personnel investment strategies</li>
+          <li>Lead engineering and support teams across 3 cyber capability dev networks</li>
+          <li>Drive adoption of Agile methodologies, DevSecOps practices, and contemporary infrastructure tooling across the squadron</li>
         </ul>
       </div>
     </fast-card>
     <fast-card class="r159-flex-sm">
-      <img src="/assets/p1.png" />
+      <a href="https://levelup.dso.mil/"><img src="/assets/l^.png"  alt="Pixelated LevelUP LP logo"/></a>
       <div>
         <h2>LevelUP (L^)</h2>
         <fast-badge color="white" fill="af-blue">2019-2020</fast-badge>
@@ -92,9 +91,9 @@
         </p>
         <fast-divider></fast-divider>
         <ul>
-          <li>Led split of LevelUP from Platform One</li>
-          <li>Coached teams on implementation of DevSecOps and Agile methodologies</li>
-          <li>Implemented strategies to ensure platform compatibility between organizations</li>
+          <li>Coach dev teams on implementation of DevSecOps and Agile methodologies</li>
+          <li>Define strategies to ensure platform compatibility with <a href="https://p1.dso.mil/#/">Platform One</a></li>
+          <li>Advocate for resources and manning</li>
         </ul>
       </div>
     </fast-card>
@@ -109,7 +108,7 @@
         </p>
         <fast-divider></fast-divider>
         <ul>
-          <li>Design, Develop, Test, Deploy and Maintain counter unmanned aerial systems apps</li>
+          <li>Design, Develop, Test, Deploy and Maintain <a href="https://markdjacobsen.com/portfolio/dowding/">counter unmanned aerial systems apps</a></li>
           <li>Coach growing Agile teams, manage product backlogs, craft user stories, and lead design synthesis sessions</li>
         </ul>
       </div>
@@ -125,8 +124,8 @@
         </p>
         <fast-divider></fast-divider>
         <ul>
-          <li>Design, Develop, Test, Deploy and Maintain applications in support of air operations</li>
-          <li>Create and refine fast &amp; secure paths to production that could be used as templates for future Air Force apps</li>
+          <li>Design, Develop, Test, Deploy and Maintain applications in support of <a href="https://innovation.mit.edu/assets/Kessel-Run.pdf">air operations</a></li>
+          <li>Create and refine nimble &amp; secure paths to production that could be used as templates for future Air Force apps</li>
         </ul>
       </div>
     </fast-card>
@@ -141,7 +140,7 @@
         </p>
         <fast-divider></fast-divider>
         <ul>
-          <li>Design, Develop, Test, Deploy and Maintain applications for data ingest, experimentation, and tech validation</li>
+          <li>Design, Develop, Test, Deploy and Maintain applications for data ingest, experimentation and tech validation</li>
           <li>Manage projects with agile techniques and advocate for their adoption in the <a href="https://www.defense.gov/">DoD</a></li>
         </ul>
       </div>
@@ -158,7 +157,7 @@
         <fast-divider></fast-divider>
         <ul>
           <li>Analyze Big Data datasets to discover insights and find ways to refine log parsing/incident analysis for <a href="https://bing.com">Bing.com</a></li>
-          <li>Create dynamic reports from data using R, Excel, PowerBI and SharePoint</li>
+          <li>Create dynamic reports from data using R, Excel, C#, PowerBI and SharePoint</li>
         </ul>
       </div>
     </fast-card>
