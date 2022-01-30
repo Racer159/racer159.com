@@ -76,7 +76,12 @@ export class AppComponent {
     this.showGitMenu = !this.showGitMenu;
   }
 
-  handlePiClick() {
+  handlePiClick(e: MouseEvent) {
+    
+    if (e.shiftKey && e.ctrlKey) {
+			this.gotoURL('/web/net/code1.html');
+		}
+
     this.developerSteps--;
 
     if (this.developerSteps < 5) {
@@ -92,5 +97,9 @@ export class AppComponent {
     if (this.developerSteps < 1) {
       this.router.navigate(['developer']);
     }
+  }
+
+  handlePiContext() {
+    return false;
   }
 }
