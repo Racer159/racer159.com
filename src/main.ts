@@ -8,6 +8,7 @@ import {
   provideFASTDesignSystem,
   fastToolbar,
   fastButton,
+  fastTextField,
   fastCard,
   fastBadge,
   fastDivider,
@@ -37,6 +38,7 @@ platformBrowserDynamic().bootstrapModule(AppModule)
 provideFASTDesignSystem().register(
   fastToolbar(),
   fastButton(),
+  fastTextField(),
   fastCard(),
   fastBadge(),
   fastDivider(),

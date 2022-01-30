@@ -1,0 +1,66 @@
+<div class="column">
+    <div class="row">
+        <fast-text-field type="tel" [(ngModel)]="number" name="number" ngDefaultControl></fast-text-field>
+    </div>
+    <div class="row">
+        <fast-button (mousedown)="playDTMF(1209, 697, '1')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            1<br>
+            <span>&nbsp;</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1336, 697, '2')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            2<br>
+            <span>ABC</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1477, 697, '3')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            3<br>
+            <span>DEF</span>
+        </fast-button>
+    </div>
+    <div class="row">
+        <fast-button (mousedown)="playDTMF(1209, 770, '4')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            4<br>
+            <span>GHI</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1336, 770, '5')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            5<br>
+            <span>JKL</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1477, 770, '6')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            6<br>
+            <span>MNO</span>
+        </fast-button>
+    </div>
+    <div class="row">
+        <fast-button (mousedown)="playDTMF(1209, 852, '7')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            7<br>
+            <span>PQRS</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1336, 852, '8')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            8<br>
+            <span>TUV</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1477, 852, '9')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            9<br>
+            <span>WXYZ</span>
+        </fast-button>
+    </div>
+    <div class="row">
+        <fast-button (mousedown)="playDTMF(1209, 941, '*')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            *<br>
+            <span>&nbsp;</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1336, 941, '0')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            0<br>
+            <span>OPER</span>
+        </fast-button>
+        <fast-button (mousedown)="playDTMF(1477, 941, '#')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()">
+            #<br>
+            <span>&nbsp;</span>
+        </fast-button>
+    </div>
+    <div class="row">
+        <fast-button class="call" appearance="accent">
+            <i class="far fa-phone"></i>
+        </fast-button>
+    </div>
+</div>

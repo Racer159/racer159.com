@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {
   baseLayerLuminance,
   StandardLuminance,
@@ -26,8 +27,13 @@ export class AppComponent {
   colorsInterval: undefined | number;
   currentColor = 0;
 
-  // menu handling
+  // menu/toast handling
   showGitMenu = false;
+  showToast = false;
+  developerSteps = 7;
+  toastTimeout: undefined | number;
+
+  constructor(private router: Router) {}
   
   toggleLightMode() {
     this.lightModeToggleCount++;
@@ -62,7 +68,29 @@ export class AppComponent {
     window.location.href = url;
   }
 
+  gotoRoute(url: string) {
+    this.router.navigate([url]);
+  }
+
   toggleGitMenu() {
     this.showGitMenu = !this.showGitMenu;
+  }
+
+  handlePiClick() {
+    this.developerSteps--;
+
+    if (this.developerSteps < 5) {
+      this.showToast = true;
+
+      this.toastTimeout && window.clearTimeout(this.toastTimeout);
+
+      this.toastTimeout = window.setTimeout(() => {
+        this.showToast = false;
+      }, 500);
+    }
+    
+    if (this.developerSteps < 1) {
+      this.router.navigate(['developer']);
+    }
   }
 }

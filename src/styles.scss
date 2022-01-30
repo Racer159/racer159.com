@@ -31,7 +31,7 @@ a:focus {
   color: var(--accent-foreground-focus);
 }
 
-fast-card, fast-toolbar, fast-menu, fast-menu-item, fast-divider, fast-button, a, body {
+fast-card, fast-toolbar, fast-menu, fast-menu-item, fast-divider, fast-button, a, body, img {
   transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style), border var(--anim-length) var(--anim-style);
 }
 
