@@ -7,4 +7,4 @@ ng build
 # ommit, with a message to link to sources commit
 (cd dist/racer159-com; git commit -m "Build from $(git log '--format=format:%H' master -1)")
 # 5. Push to origin
-git push origin gh-pages
+git push -f origin gh-pages
