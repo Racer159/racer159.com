@@ -1,4 +1,5 @@
 import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -8,6 +9,8 @@ import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular
 export class HomeComponent implements OnInit {
   @ViewChild('r159HomeExperience') r159HomeExperience: ElementRef<HTMLDivElement> | undefined;
 
+  unicorn = false;
+
   experienceScrollData = {
     scrollLeft: 0,
     scrollWidth: 2,
@@ -16,7 +19,11 @@ export class HomeComponent implements OnInit {
   scrolling: undefined | number;
   scrollTo = 0;
 
-  constructor() { }
+  constructor(private _Activatedroute: ActivatedRoute) {
+    this._Activatedroute.queryParams.subscribe(params => {
+      this.unicorn = params['unicorn'] === 'true' ? true : false; 
+    });
+  }
 
   ngOnInit(): void { }
 

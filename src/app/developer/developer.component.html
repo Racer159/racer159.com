@@ -59,8 +59,12 @@
         </fast-button>
     </div>
     <div class="row">
-        <fast-button class="call" appearance="accent">
+        <fast-button class="call" appearance="accent" (click)="activate()">
             <i class="far fa-phone"></i>
         </fast-button>
     </div>
+</div>
+
+<div id="r159-dev-notifications" [class]="showToast ? 'shown' : 'hidden'">
+    <span>You have reached a non-working number.</span>
 </div>

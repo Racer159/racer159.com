@@ -29,3 +29,18 @@ fast-button {
 .call {
     width: 200px;
 }
+
+#r159-dev-notifications {
+    position: fixed;
+    z-index: 100;
+    bottom: calc(var(--design-unit) * 4px);
+    text-align: center;
+    width: 100%;
+    pointer-events: none;
+
+    span {
+        padding: calc(var(--design-unit) * 2px);
+        background-color: var(--neutral-layer-floating);
+        border-radius: calc(var(--control-corner-radius) * 3px);
+    }
+}

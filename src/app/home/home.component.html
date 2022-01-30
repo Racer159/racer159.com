@@ -1,15 +1,23 @@
-<div id="r159-home-banner">
+<div id="r159-home-banner" *ngIf="!unicorn">
   <img class="r159-lg" src="/assets/vehicle-friends-lg.png"/>
   <img class="r159-md" src="/assets/vehicle-friends-md.png"/>
   <img class="r159-sm" src="/assets/vehicle-friends-sm.png"/>
   <img class="r159-xs" src="/assets/vehicle-friends-xs.png"/>
 </div>
 
+<div id="r159-home-banner" *ngIf="unicorn">
+  <img class="r159-lg" src="/assets/vehicle-friends-lg-u.png"/>
+  <img class="r159-md" src="/assets/vehicle-friends-md-u.png"/>
+  <img class="r159-sm" src="/assets/vehicle-friends-sm-u.png"/>
+  <img class="r159-xs" src="/assets/vehicle-friends-xs-u.png"/>
+</div>
+
 <div id="r159-home-main">
   <div class="spacer"></div>
   <div id="r159-home-about">
     <div class="r159-flex-about">
-      <img src="/assets/profile.png" class="r159-about-photo" />
+      <img src="/assets/profile.png" class="r159-about-photo" *ngIf="!unicorn"/>
+      <img src="/assets/unicorn.png" class="r159-about-photo" *ngIf="unicorn"/>
     </div>
     <div class="r159-flex-about">
       <h1>Wayne Starr</h1>

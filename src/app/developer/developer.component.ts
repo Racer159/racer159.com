@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-developer',
@@ -12,7 +13,10 @@ export class DeveloperComponent implements OnInit {
   oscillatorTwo: OscillatorNode | undefined;
   number = '';
 
-  constructor() {
+  showToast = false;
+  toastTimeout: undefined | number;
+
+  constructor(private router: Router) {
     this.audioContext = new AudioContext();
   }
 
@@ -50,6 +54,21 @@ export class DeveloperComponent implements OnInit {
       this.oscillatorOne.disconnect();
       this.oscillatorTwo.stop();
       this.oscillatorTwo.disconnect();
+    }
+  }
+
+  activate() {
+    if (this.number === atob('MzIxMjMzMzIyMjMzMzMyMTIzMzMzMjIzMjE=')) {
+      this.router.navigate([''], { queryParams: { unicorn: 'true' } });
+    } else {
+      this.number = '';
+      this.showToast = true;
+
+      this.toastTimeout && window.clearTimeout(this.toastTimeout);
+
+      this.toastTimeout = window.setTimeout(() => {
+        this.showToast = false;
+      }, 750);
     }
   }
 }

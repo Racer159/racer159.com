@@ -91,7 +91,7 @@ export class AppComponent {
 
       this.toastTimeout = window.setTimeout(() => {
         this.showToast = false;
-      }, 500);
+      }, 750);
     }
     
     if (this.developerSteps < 1) {
