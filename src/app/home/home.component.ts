@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
     scrollWidth: 2,
     offsetWidth: 1
   }
+  updateTimeout: number | undefined;
   scrolling: undefined | number;
   scrollTo = 0;
 
@@ -77,12 +78,17 @@ export class HomeComponent implements OnInit {
 
   @HostListener('window:resize')
   updateExperienceScrollData() {
-    if (this.r159HomeExperience) {
-      this.experienceScrollData = {
-        scrollLeft: this.r159HomeExperience.nativeElement.scrollLeft,
-        scrollWidth: this.r159HomeExperience.nativeElement.scrollWidth,
-        offsetWidth: this.r159HomeExperience.nativeElement.offsetWidth
+    const update = () => {
+      if (this.r159HomeExperience) {
+        this.experienceScrollData = {
+          scrollLeft: this.r159HomeExperience.nativeElement.scrollLeft,
+          scrollWidth: this.r159HomeExperience.nativeElement.scrollWidth,
+          offsetWidth: this.r159HomeExperience.nativeElement.offsetWidth
+        }
       }
-    }
+    };
+
+    clearTimeout(this.updateTimeout);
+    this.updateTimeout = window.setTimeout(update, 25);
   }
 }
