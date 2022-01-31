@@ -39,12 +39,6 @@ export class AppComponent {
     this.lightModeToggleCount++;
     this.darkMode = !this.darkMode;
 
-    if (this.darkMode) {
-      baseLayerLuminance.setValueFor(this.r159Body, StandardLuminance.DarkMode);
-    } else {
-      baseLayerLuminance.setValueFor(this.r159Body, StandardLuminance.LightMode);
-    }
-
     if (this.lightModeToggleCount > 7) {
       this.lightModeToggleCount = 0;
       if (this.colorsInterval) {
@@ -61,6 +55,12 @@ export class AppComponent {
           }
         }, 300);
       }
+    }
+
+    if (this.darkMode) {
+      baseLayerLuminance.setValueFor(this.r159Body, 0.15);
+    } else {
+      baseLayerLuminance.setValueFor(this.r159Body, StandardLuminance.LightMode);
     }
   };
 

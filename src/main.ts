@@ -52,7 +52,7 @@ bodyFont.setValueFor(r159Body, "Rubik, sans-serif");
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
   baseLayerLuminance.setValueFor(r159Body, StandardLuminance.LightMode);
 } else {
-  baseLayerLuminance.setValueFor(r159Body, StandardLuminance.DarkMode);
+  baseLayerLuminance.setValueFor(r159Body, 0.15);
 }
 density.setValueFor(r159Body, 1.25);
 controlCornerRadius.setValueFor(r159Body, 3);
