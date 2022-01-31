@@ -39,6 +39,11 @@ fast-button {
     pointer-events: none;
 
     span {
+        max-width: calc(100vw - 24px);
+        display: inline-block;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
         padding: calc(var(--design-unit) * 2px);
         background-color: var(--neutral-layer-floating);
         border-radius: calc(var(--control-corner-radius) * 3px);
