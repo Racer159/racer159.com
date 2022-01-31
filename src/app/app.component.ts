@@ -99,7 +99,7 @@ export class AppComponent {
     }
   }
 
-  handlePiContext() {
+  noContext() {
     return false;
   }
 }

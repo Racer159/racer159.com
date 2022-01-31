@@ -21,9 +21,15 @@ export class DeveloperComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    window.scrollTo(0, 0);
   }
 
-  playDTMF(high: number, low: number, pressed: string) {
+playDTMF(e: MouseEvent | TouchEvent, high: number, low: number, pressed: string) {
+    if (e.type === 'touchstart') {
+      e.stopPropagation();
+      e.preventDefault();
+    }
+
     this.number += pressed;
 
     if (this.audioContext) {
@@ -70,5 +76,10 @@ export class DeveloperComponent implements OnInit {
         this.showToast = false;
       }, 750);
     }
+  }
+
+  noContext() {
+    this.stopDTMF();
+    return false;
   }
 }
