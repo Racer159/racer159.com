@@ -51,4 +51,8 @@ describe('AppComponent', () => {
     expect(compiled.querySelector('#r159-copyright')?.textContent).toContain('© ' + new Date().getFullYear());
     expect(compiled.querySelector('#r159-footer')?.textContent).toContain('π');
   });
+
+  it('should render the git menu', () => {
+    expect(false).toBe(true);
+  });
 });
