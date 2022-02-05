@@ -1,5 +1,7 @@
 # racer159.com
 
+[![CI](https://github.com/Racer159/racer159.github.io/actions/workflows/main.yml/badge.svg)](https://github.com/Racer159/racer159.github.io/actions/workflows/main.yml)
+
 This repository contains the backend implementation for https://racer159.com.  See below for run/build instructions.
 
 ## Development server
