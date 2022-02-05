@@ -56,6 +56,10 @@ fast-badge {
   --badge-color-neutral: var(--neutral-foreground-rest);
 }
 
+fast-card {
+  background-color: var(--neutral-layer-1);
+}
+
 .hidden {
   visibility: hidden;
   opacity: 0;
