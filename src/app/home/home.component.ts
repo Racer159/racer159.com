@@ -1,4 +1,4 @@
-import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
@@ -6,7 +6,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
   @ViewChild('r159HomeExperience') r159HomeExperience: ElementRef<HTMLDivElement> | undefined;
 
   unicorn = false;
@@ -25,8 +25,6 @@ export class HomeComponent implements OnInit {
       this.unicorn = params['unicorn'] === 'true' ? true : false; 
     });
   }
-
-  ngOnInit(): void { }
 
   scrollExperience(direction: string) {
     if (this.r159HomeExperience && this.r159HomeExperience.nativeElement.children.length > 0) {

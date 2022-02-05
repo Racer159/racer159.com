@@ -47,7 +47,10 @@ provideFASTDesignSystem().register(
 
 const r159Body = document.getElementById("r159-body") as HTMLElement;
 
-accentPalette.setValueFor(r159Body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB("#0159A0")!)));
+const color = parseColorHexRGB("#0159A0");
+if (color) {
+  accentPalette.setValueFor(r159Body, PaletteRGB.from(SwatchRGB.from(color)));
+}
 bodyFont.setValueFor(r159Body, "Rubik, sans-serif");
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
   baseLayerLuminance.setValueFor(r159Body, StandardLuminance.LightMode);

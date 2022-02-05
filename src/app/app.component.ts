@@ -1,4 +1,4 @@
-import { Component, ElementRef, AfterViewInit, ViewChild, Inject } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   baseLayerLuminance,
@@ -44,15 +44,21 @@ export class AppComponent {
       this.lightModeToggleCount = 0;
       if (this.colorsInterval) {
         window.clearInterval(this.colorsInterval);
-        accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB("#0159A0")!)));
+        const color = parseColorHexRGB("#0159A0");
+        if (color) {
+          accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(color)));
+        }
         this.colorsInterval = undefined;
       } else {
         this.colorsInterval = window.setInterval(() => {
-          accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB(this.colors[this.currentColor])!)));
-          if (this.currentColor < this.colors.length - 1) {
-            this.currentColor++;
-          } else {
-            this.currentColor = 0;
+          const color = parseColorHexRGB(this.colors[this.currentColor]);
+          if (color) {
+            accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(color)));
+            if (this.currentColor < this.colors.length - 1) {
+              this.currentColor++;
+            } else {
+              this.currentColor = 0;
+            }
           }
         }, 300);
       }
@@ -63,7 +69,7 @@ export class AppComponent {
     } else {
       baseLayerLuminance.setValueFor(this.document.body, StandardLuminance.LightMode);
     }
-  };
+  }
 
   gotoURL(url: string) {
     window.location.href = url;
