@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, AfterViewInit, ViewChild, Inject } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   baseLayerLuminance,
@@ -11,6 +11,7 @@ import {
 import {
   parseColorHexRGB
 } from '@microsoft/fast-colors';
+import { DOCUMENT } from '@angular/common';
 
 @Component({
   selector: 'app-root',
@@ -18,10 +19,8 @@ import {
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  r159Body = document.getElementById("r159-body") as HTMLElement;
-
   // lightmode handling
-  darkMode = baseLayerLuminance.getValueFor(this.r159Body) < 0.5 ? true : false;
+  darkMode = false;
   lightModeToggleCount = 0;
   colors = ["#ff0000", "#ff7f00", "#ffd700", "#008000", "#4d4dff", "#4b0082", "#9400d3"];
   colorsInterval: undefined | number;
@@ -33,7 +32,9 @@ export class AppComponent {
   developerSteps = 7;
   toastTimeout: undefined | number;
 
-  constructor(private router: Router) {}
+  constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
+    this.darkMode = baseLayerLuminance.getValueFor(this.document.body) < 0.5 ? true : false;
+  }
   
   toggleLightMode() {
     this.lightModeToggleCount++;
@@ -43,11 +44,11 @@ export class AppComponent {
       this.lightModeToggleCount = 0;
       if (this.colorsInterval) {
         window.clearInterval(this.colorsInterval);
-        accentPalette.setValueFor(this.r159Body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB("#0159A0")!)));
+        accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB("#0159A0")!)));
         this.colorsInterval = undefined;
       } else {
         this.colorsInterval = window.setInterval(() => {
-          accentPalette.setValueFor(this.r159Body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB(this.colors[this.currentColor])!)));
+          accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(parseColorHexRGB(this.colors[this.currentColor])!)));
           if (this.currentColor < this.colors.length - 1) {
             this.currentColor++;
           } else {
@@ -58,9 +59,9 @@ export class AppComponent {
     }
 
     if (this.darkMode) {
-      baseLayerLuminance.setValueFor(this.r159Body, 0.15);
+      baseLayerLuminance.setValueFor(this.document.body, 0.15);
     } else {
-      baseLayerLuminance.setValueFor(this.r159Body, StandardLuminance.LightMode);
+      baseLayerLuminance.setValueFor(this.document.body, StandardLuminance.LightMode);
     }
   };
 
