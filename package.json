@@ -10,7 +10,8 @@
     "test": "ng test",
     "e2e": "ng e2e",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run",
+    "release": "ng build && (cd dist/racer159-com; git add -f .) && (cd dist/racer159-com; git commit -m \"Build from $(git log '--format=format:%H' master -1)\") && git subtree push --prefix dist/racer159-com origin gh-pages"
   },
   "private": true,
   "dependencies": {
