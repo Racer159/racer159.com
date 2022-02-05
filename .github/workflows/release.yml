@@ -1,19 +1,13 @@
-name: CI
+name: Release
 
 # Controls when the workflow will run
 on:
-  # Triggers the workflow on push or pull request events but only for the master branch
-  push:
-    branches: [ master ]
-  pull_request:
-    branches: [ master ]
-
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
 jobs:
 
-  lint:
+  release:
     runs-on: ubuntu-latest
 
     steps:
@@ -24,33 +18,4 @@ jobs:
         run: npm install
 
       - name: Lint
-        run: npm run lint
-
-  unit:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Unit Test
-        run: npm test -- --watch=false
-
-  e2e:
-    runs-on: ubuntu-latest
-
-    steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-
-      - name: Install Dependencies
-        run: npm install
-
-      - name: Start Dev Server
-        run: npm start &
-
-      - name: E2E Test
-        run: npm run cypress:run
+        run: npm run release
