@@ -37,7 +37,7 @@ jobs:
         run: npm install
 
       - name: Unit Test
-        run: npm test
+        run: npm test -- --watch=false
 
   e2e:
     runs-on: ubuntu-latest
@@ -51,5 +51,5 @@ jobs:
 
       - name: E2E Test
         run: | 
-          npm start
+          npm start -- --prod
           npm run cypress:run
