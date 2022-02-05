@@ -5,6 +5,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    border-radius: 0;
 
     [slot="label"] {
         font-size: var(--type-ramp-plus-2-font-size);

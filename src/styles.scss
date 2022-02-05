@@ -38,15 +38,15 @@ fast-card, fast-toolbar, fast-menu, fast-menu-item, fast-divider, fast-button, a
 fast-badge {
   --badge-fill-accent: var(--accent-fill-rest);
   --badge-fill-neutral: var(--neutral-layer-4);
-  --badge-fill-rit-orange: #f36e21;
+  --badge-fill-rit-orange: #f47a34; // lightened from #F36E21 (improve contrast)
   --badge-fill-rit-brown: #513127;
   --badge-fill-rit-red: #8F0006;
   --badge-fill-rit-gray: #7C878E;
   --badge-fill-af-blue: #0033A0;
-  --badge-fill-af-silver: #8F8F8C;
+  --badge-fill-af-silver: #BFBFBE; // lightened from #8F8F8C (improve contrast)
   --badge-fill-ms-red: #F25022;
-  --badge-fill-ms-green: #7FBA00;
-  --badge-fill-ms-blue: #00A4EF;
+  --badge-fill-ms-green: #90D400; // lightened from #7FBA00 (improve contrast)
+  --badge-fill-ms-blue: #23BAFF; // lightened from #00A4EF (improve contrast)
   --badge-fill-ms-yellow: #FFB900;
   --badge-fill-ms-gray: #737373;
   

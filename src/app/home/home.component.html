@@ -6,10 +6,10 @@
 </div>
 
 <div id="r159-home-banner" *ngIf="unicorn">
-  <img class="r159-lg" src="/assets/vehicle-friends-lg-u.png" alt="Pixelated truck and motorcycles"/>
-  <img class="r159-md" src="/assets/vehicle-friends-md-u.png" alt="Pixelated truck carrying motorcycles"/>
-  <img class="r159-sm" src="/assets/vehicle-friends-sm-u.png" alt="Pixelated motorcycles"/>
-  <img class="r159-xs" src="/assets/vehicle-friends-xs-u.png" alt="Pixelated small motorcycle"/>
+  <img class="r159-lg" src="/assets/vehicle-friends-lg-u.png" alt="Pixelated truck and motorcycles with unicorn"/>
+  <img class="r159-md" src="/assets/vehicle-friends-md-u.png" alt="Pixelated truck carrying motorcycles with unicorn"/>
+  <img class="r159-sm" src="/assets/vehicle-friends-sm-u.png" alt="Pixelated motorcycles with unicorn"/>
+  <img class="r159-xs" src="/assets/vehicle-friends-xs-u.png" alt="Pixelated small motorcycle with unicorn"/>
 </div>
 
 <div id="r159-home-main">
@@ -54,11 +54,11 @@
   <div class="spacer"></div>
   <fast-divider style="width: 100%;"></fast-divider>
   <div id="r159-home-experience-buttons">
-    <fast-button id="r159-home-experience-left" appearance="accent" (click)="scrollExperience('left')"
+    <fast-button id="r159-home-experience-left" appearance="accent" (click)="scrollExperience('left')" aria-label="Scroll Left"
       [class]="experienceScrollData.scrollLeft > 0 ? 'shown' : 'hidden'">
       <i class="far fa-lg fa-angle-left"></i>
     </fast-button>
-    <fast-button id="r159-home-experience-right" appearance="accent" (click)="scrollExperience('right')"
+    <fast-button id="r159-home-experience-right" appearance="accent" (click)="scrollExperience('right')" aria-label="Scroll Right"
       [class]="experienceScrollData.scrollLeft < (experienceScrollData.scrollWidth - experienceScrollData.offsetWidth) ? 'shown' : 'hidden'">
       <i class="far fa-lg fa-angle-right"></i>
     </fast-button>
@@ -69,7 +69,7 @@
       <div>
         <h2>90th Cyber Ops. Sq. <span class="acronym">(90COS)</span></h2>
         <fast-badge color="white" fill="af-blue">2019-2022</fast-badge>
-        <fast-badge color="white" fill="af-silver">San Antonio, TX</fast-badge>
+        <fast-badge color="black" fill="af-silver">San Antonio, TX</fast-badge>
         <p>
           <b>Flight Commander, Network Support</b>
         </p>
@@ -85,7 +85,7 @@
       <div>
         <h2>LevelUP <span class="acronym">(L^)</span></h2>
         <fast-badge color="white" fill="af-blue">2019-2020</fast-badge>
-        <fast-badge color="white" fill="af-silver">San Antonio, TX</fast-badge>
+        <fast-badge color="black" fill="af-silver">San Antonio, TX</fast-badge>
         <p>
           <b>Software Factory Lead</b>
         </p>
@@ -102,7 +102,7 @@
       <div>
         <h2>Rogue Squadron <span class="acronym">(RS)</span></h2>
         <fast-badge color="white" fill="af-blue">2018-2019</fast-badge>
-        <fast-badge color="white" fill="af-silver">Mountain View, CA</fast-badge>
+        <fast-badge color="black" fill="af-silver">Mountain View, CA</fast-badge>
         <p>
           <b>Product Manager/DevSecOps Engineer</b>
         </p>
@@ -118,7 +118,7 @@
       <div>
         <h2>Kessel Run <span class="acronym">(KR)</span></h2>
         <fast-badge color="white" fill="af-blue">2017-2018</fast-badge>
-        <fast-badge color="white" fill="af-silver">Boston, MA</fast-badge>
+        <fast-badge color="black" fill="af-silver">Boston, MA</fast-badge>
         <p>
           <b>DevSecOps Engineer</b>
         </p>
@@ -134,7 +134,7 @@
       <div>
         <h2>Defense Innovation Unit <span class="acronym">(DIU)</span></h2>
         <fast-badge color="white" fill="af-blue">2016-2019</fast-badge>
-        <fast-badge color="white" fill="af-silver">Mountain View, CA</fast-badge>
+        <fast-badge color="black" fill="af-silver">Mountain View, CA</fast-badge>
         <p>
           <b>Chief, Cloud DevSecOps</b>
         </p>
@@ -149,8 +149,8 @@
       <a href="https://bing.com"><img src="/assets/ms.png" alt="Pixelated Microsoft Bing letter B logo"/></a>
       <div>
         <h2>Microsoft <span class="acronym">(Bing Live Site Eng.)</span></h2>
-        <fast-badge color="white" fill="ms-blue">2014-2015</fast-badge>
-        <fast-badge color="white" fill="ms-green">Bellevue, WA</fast-badge>
+        <fast-badge color="black" fill="ms-blue">2014-2015</fast-badge>
+        <fast-badge color="black" fill="ms-green">Bellevue, WA</fast-badge>
         <p>
           <b>Software Developer in Test (Intern)</b>
         </p>
@@ -165,7 +165,7 @@
       <a href="https://www.rit.edu/its/sito/"><img src="/assets/sito.png" alt="Pixelated Student IT Office multi-colored cube logo"/></a>
       <div>
         <h2>Student IT Office <span class="acronym">(SITO)</span></h2>
-        <fast-badge color="white" fill="rit-orange">2014-2016</fast-badge>
+        <fast-badge color="black" fill="rit-orange">2014-2016</fast-badge>
         <fast-badge color="white" fill="rit-red">Rochester, NY</fast-badge>
         <p>
           <b>Web Developer</b>
@@ -181,7 +181,7 @@
       <a href="https://www.rit.edu/"><img src="/assets/rit.png" alt="Pixelated RIT tiger roaring logo"/></a>
       <div>
         <h2>Rochester Inst. of Tech. <span class="acronym">(RIT)</span></h2>
-        <fast-badge color="white" fill="rit-orange">2011-2016</fast-badge>
+        <fast-badge color="black" fill="rit-orange">2011-2016</fast-badge>
         <fast-badge color="white" fill="rit-red">Rochester, NY</fast-badge>
         <fast-badge color="white" fill="rit-brown">3.85 GPA</fast-badge>
         <p>

@@ -1,6 +1,6 @@
 <div class="column">
-    <div class="row">
-        <fast-text-field type="tel" [(ngModel)]="number" name="number" ngDefaultControl></fast-text-field>
+    <div class="row" role="heading" aria-level="1">
+        <fast-text-field type="tel" [(ngModel)]="number" name="number" ngDefaultControl aria-label="Number Input"></fast-text-field>
     </div>
     <div class="row">
         <fast-button (mousedown)="playDTMF($event, 1209, 697, '1')" (touchstart)="playDTMF($event, 1209, 697, '1')" (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
@@ -59,7 +59,7 @@
         </fast-button>
     </div>
     <div class="row">
-        <fast-button class="call" appearance="accent" (click)="activate()">
+        <fast-button class="call" appearance="accent" (click)="activate()" aria-label="Submit">
             <i class="far fa-phone"></i>
         </fast-button>
     </div>

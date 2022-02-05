@@ -22,7 +22,8 @@
       "es2020",
       "dom"
     ],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["cypress", "cypress-axe"]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
