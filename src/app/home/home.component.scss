@@ -128,13 +128,15 @@ fast-badge {
 }
 
 @mixin col-about {
-  flex-flow: column;
-  gap: v.$base-px-unit * 2;
-  padding: 0;
-  text-align: center;
+  #r159-home-about {
+    flex-flow: column;
+    gap: v.$base-px-unit * 2;
+    padding: 0;
+    text-align: center;
+  }
 }
 
-@media screen and (max-width: 1599.99px) and (min-width: 1200px) {
+@media screen and (max-width: v.$md-max-width) and (min-width: v.$md-min-width) {
   .r159-lg {
     display: none;
   }
@@ -144,7 +146,7 @@ fast-badge {
   }
 }
 
-@media screen and (max-width: 1199.99px) and (min-width: 800px) {
+@media screen and (max-width: v.$sm-max-width) and (min-width: v.$sm-min-width) {
   .r159-lg {
     display: none;
   }
@@ -153,12 +155,10 @@ fast-badge {
     display: block;
   }
 
-  #r159-home-about {
-    @include col-about;
-  }
+  @include col-about;
 }
 
-@media screen and (max-width: 799.99px) {
+@media screen and (max-width: v.$xs-max-width) {
   .r159-lg {
     display: none;
   }
@@ -172,12 +172,10 @@ fast-badge {
     margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
   }
 
-  #r159-home-about {
-    @include col-about;
-  }
+  @include col-about;
 }
 
-@media screen and (max-width: 444px) {
+@media screen and (max-width: v.$xxs-max-width) {
   .r159-about-photo {
     width: calc($card-width - (v.$base-px-unit * 10));
   }
