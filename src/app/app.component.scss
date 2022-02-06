@@ -56,22 +56,22 @@ $toolbar-height: calc(
   padding-top: $toolbar-height;
 }
 
-#r159-copyright {
-  position: fixed;
-  z-index: 100;
-  bottom: 0;
-  left: 0;
-  padding: v.$base-px-unit * 3 v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px);
-  cursor: pointer;
-}
-
+#r159-copyright,
 #r159-footer {
   position: fixed;
   z-index: 100;
   bottom: 0;
+  cursor: pointer;
+}
+
+#r159-copyright {
+  left: 0;
+  padding: v.$base-px-unit * 3 v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px);
+}
+
+#r159-footer {
   right: 0;
   padding: v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px) v.$base-px-unit * 3;
-  cursor: pointer;
 }
 
 #r159-notifications {

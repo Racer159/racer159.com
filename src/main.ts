@@ -45,17 +45,15 @@ provideFASTDesignSystem().register(
   fastMenu(),
   fastMenuItem());
 
-const r159Body = document.getElementById("r159-body") as HTMLElement;
-
 const color = parseColorHexRGB("#0159A0");
 if (color) {
-  accentPalette.setValueFor(r159Body, PaletteRGB.from(SwatchRGB.from(color)));
+  accentPalette.setValueFor(document.body, PaletteRGB.from(SwatchRGB.from(color)));
 }
-bodyFont.setValueFor(r159Body, "Rubik, sans-serif");
+bodyFont.setValueFor(document.body, "Rubik, sans-serif");
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-  baseLayerLuminance.setValueFor(r159Body, StandardLuminance.LightMode);
+  baseLayerLuminance.setValueFor(document.body, StandardLuminance.LightMode);
 } else {
-  baseLayerLuminance.setValueFor(r159Body, 0.15);
+  baseLayerLuminance.setValueFor(document.body, 0.15);
 }
-density.setValueFor(r159Body, 1.25);
-controlCornerRadius.setValueFor(r159Body, 3);
+density.setValueFor(document.body, 1.25);
+controlCornerRadius.setValueFor(document.body, 3);

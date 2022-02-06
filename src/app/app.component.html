@@ -1,7 +1,7 @@
 <nav>
   <fast-toolbar id="r159-toolbar" style="width: 100%">
     <label slot="label" (click)="gotoRoute('/')">
-      <img src="/assets/icon.png" class="r159-header-icon" alt="Pixelated motorcycle and truck"/>
+      <img src="/assets/icon.png" class="r159-header-icon" alt="Pixelated motorcycle and truck" />
       <span class="no-print" id="r159-title">Racer159</span>
     </label>
     <div slot="end">
@@ -9,19 +9,28 @@
         <i class="far fa-lg fa-lightbulb-slash" *ngIf="darkMode"></i>
         <i class="far fa-lg fa-lightbulb-on" *ngIf="!darkMode"></i>
       </fast-button>
-      <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"  aria-label="LinkedIn Profile">
+      <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"
+        aria-label="LinkedIn Profile">
         <i class="fab fa-lg fa-linkedin-in"></i>
       </fast-button>
-      <fast-button [appearance]="showGitMenu ? 'neutral' : 'stealth'" (click)="toggleGitMenu()" aria-label="Toggle Git Menu">
+      <fast-button [appearance]="showGitMenu ? 'neutral' : 'stealth'" (click)="toggleGitMenu()"
+        aria-label="Toggle Git Menu">
         <i class="far fa-lg fa-code-branch"></i>
       </fast-button>
       <a class="print-only">https://racer159.com</a>
     </div>
   </fast-toolbar>
   <fast-menu id="r159-git-menu" [class]="showGitMenu ? 'shown' : 'hidden'">
-    <fast-menu-item (click)="gotoURL('https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i><p>GitHub</p></fast-menu-item>
-    <fast-menu-item (click)="gotoURL('https://gitlab.com/Racer159')"><i class="fab fa-lg fa-gitlab" slot="start"></i><p>GitLab</p></fast-menu-item>
-    <fast-menu-item (click)="gotoURL('https://repo1.dso.mil/wayne.starr')"><i class="fab fa-lg fa-git-alt" slot="start"></i><p>Repo One</p></fast-menu-item>
+    <fast-menu-item (click)="gotoURL('https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i>
+      <p>GitHub</p>
+    </fast-menu-item>
+    <fast-menu-item (click)="gotoURL('https://gitlab.com/Racer159')"><i class="fab fa-lg fa-gitlab" slot="start"></i>
+      <p>GitLab</p>
+    </fast-menu-item>
+    <fast-menu-item (click)="gotoURL('https://repo1.dso.mil/wayne.starr')"><i class="fab fa-lg fa-git-alt"
+        slot="start"></i>
+      <p>Repo One</p>
+    </fast-menu-item>
   </fast-menu>
   <div id="r159-menu-cover" [class]="showGitMenu ? 'shown' : 'hidden'" (click)="toggleGitMenu()"></div>
 </nav>
@@ -32,7 +41,8 @@
 
 <footer>
   <div id="r159-notifications" [class]="showToast ? 'shown' : 'hidden'">
-    <span *ngIf="developerSteps > 0">You are now {{developerSteps}} {{developerSteps != 1 ? "steps" : "step"}} away from being a developer.</span>
+    <span *ngIf="developerSteps > 0">You are now {{developerSteps}} {{developerSteps != 1 ? "steps" : "step"}} away from
+      being a developer.</span>
     <span *ngIf="developerSteps < 1">Developer mode has been turned on.</span>
   </div>
 
