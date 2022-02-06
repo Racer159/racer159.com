@@ -1,0 +1,32 @@
+/* Screen Break Widths */
+$lg-min-width: 1600px;
+$md-max-width: 1599.99px;
+$md-min-width: 1200px;
+$sm-max-width: 1199.99px;
+$sm-min-width: 800px;
+$xs-max-width: 799.99px;
+$xxs-max-width: 444px;
+
+/* Base Units */
+$base-px-unit: 8px;
+
+/* Shared Mixins */
+@mixin notifications {
+  position: fixed;
+  z-index: 100;
+  bottom: calc(var(--design-unit) * 4px);
+  text-align: center;
+  width: 100%;
+  pointer-events: none;
+
+  span {
+    max-width: calc(100vw - $base-px-unit * 3);
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: calc(var(--design-unit) * 2px);
+    background-color: var(--neutral-layer-floating);
+    border-radius: calc(var(--control-corner-radius) * 3px);
+  }
+}

@@ -1,51 +1,39 @@
+@use "../../variables" as v;
+
+$button-size: 100px;
+
 fast-text-field {
-    width: 332px;
+  width: 332px;
 }
 
 fast-button {
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    font-size: 1.5em;
+  width: $button-size;
+  height: $button-size;
+  border-radius: $button-size / 2;
+  font-size: 1.5em;
 
-    span {
-        font-size: 0.5em;
-    }
+  span {
+    font-size: 0.5em;
+  }
 }
 
 .column {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: v.$base-px-unit * 2;
+  margin-top: v.$base-px-unit * 3;
 }
 
 .row {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
+  display: flex;
+  justify-content: center;
+  gap: v.$base-px-unit * 2;
 }
 
 .call {
-    width: 200px;
+  width: $button-size * 2;
 }
 
 #r159-dev-notifications {
-    position: fixed;
-    z-index: 100;
-    bottom: calc(var(--design-unit) * 4px);
-    text-align: center;
-    width: 100%;
-    pointer-events: none;
-
-    span {
-        max-width: calc(100vw - 24px);
-        display: inline-block;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        overflow: hidden;
-        padding: calc(var(--design-unit) * 2px);
-        background-color: var(--neutral-layer-floating);
-        border-radius: calc(var(--control-corner-radius) * 3px);
-    }
+  @include v.notifications;
 }

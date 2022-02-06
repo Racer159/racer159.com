@@ -1,15 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
 
-@font-face { font-family: Rubik; src: url('/assets/webfonts/Rubik-VariableFont_wght.ttf'); }
-@font-face { font-family: Rubik; src: url('/assets/webfonts/Rubik-Italic-VariableFont_wght.ttf'); font-style: italic; }
+@font-face { font-family: Rubik; src: url("/assets/webfonts/Rubik-VariableFont_wght.ttf"); }
+
+@font-face { font-family: Rubik; src: url("/assets/webfonts/Rubik-Italic-VariableFont_wght.ttf"); font-style: italic; }
 
 body {
   font-family: var(--body-font);
   color: var(--neutral-foreground-rest);
   background-color: var(--neutral-layer-2);
   margin: 0;
+
   --anim-length: 125ms;
   --anim-style: linear;
+}
+
+fast-card,
+fast-toolbar,
+fast-menu,
+fast-menu-item,
+fast-divider,
+fast-button,
+a,
+body,
+img {
+  transition:
+    background-color var(--anim-length) var(--anim-style),
+    color var(--anim-length) var(--anim-style),
+    border var(--anim-length) var(--anim-style);
 }
 
 h2 {
@@ -19,6 +36,7 @@ h2 {
 a {
   color: var(--accent-foreground-rest);
 }
+
 a:hover {
   color: var(--accent-foreground-hover);
 }
@@ -31,27 +49,22 @@ a:focus {
   color: var(--accent-foreground-focus);
 }
 
-fast-card, fast-toolbar, fast-menu, fast-menu-item, fast-divider, fast-button, a, body, img {
-  transition: background-color var(--anim-length) var(--anim-style), color var(--anim-length) var(--anim-style), border var(--anim-length) var(--anim-style);
-}
-
 fast-badge {
   --badge-fill-accent: var(--accent-fill-rest);
   --badge-fill-neutral: var(--neutral-layer-4);
-  --badge-fill-rit-orange: #f47a34; // lightened from #F36E21 (improve contrast)
+  --badge-fill-rit-orange: #f47a34; // lightened from #f36e21 (improve contrast)
   --badge-fill-rit-brown: #513127;
-  --badge-fill-rit-red: #8F0006;
-  --badge-fill-rit-gray: #7C878E;
-  --badge-fill-af-blue: #0033A0;
-  --badge-fill-af-silver: #BFBFBE; // lightened from #8F8F8C (improve contrast)
-  --badge-fill-ms-red: #F25022;
-  --badge-fill-ms-green: #90D400; // lightened from #7FBA00 (improve contrast)
-  --badge-fill-ms-blue: #23BAFF; // lightened from #00A4EF (improve contrast)
-  --badge-fill-ms-yellow: #FFB900;
+  --badge-fill-rit-red: #8f0006;
+  --badge-fill-rit-gray: #7c878e;
+  --badge-fill-af-blue: #0033a0;
+  --badge-fill-af-silver: #bfbfbe; // lightened from #8f8f8c (improve contrast)
+  --badge-fill-ms-red: #f25022;
+  --badge-fill-ms-green: #90d400; // lightened from #7fba00 (improve contrast)
+  --badge-fill-ms-blue: #23baff; // lightened from #00a4ef (improve contrast)
+  --badge-fill-ms-yellow: #ffb900;
   --badge-fill-ms-gray: #737373;
-  
-  --badge-color-black: #000000;
-  --badge-color-white: #ffffff;
+  --badge-color-black: #000;
+  --badge-color-white: #fff;
   --badge-color-accent: var(--foreground-on-accent-rest);
   --badge-color-neutral: var(--neutral-foreground-rest);
 }
@@ -85,7 +98,9 @@ fast-card {
     display: none;
   }
 
-  body, fast-card, fast-toolbar {
+  body,
+  fast-card,
+  fast-toolbar {
     background-color: white;
     color: black;
   }
