@@ -65,7 +65,11 @@ playDTMF(e: MouseEvent | TouchEvent, high: number, low: number, pressed: string)
 
   activate() {
     if (this.number === atob('MzIxMjMzMzIyMjMzMzMyMTIzMzMzMjIzMjE=')) {
-      this.router.navigate([''], { queryParams: { unicorn: 'true' } });
+      this.router.navigate([''], { queryParams: { mode: atob('dW4=') } }); // single-horn
+    } else if (this.number === atob('ODcyODcyODcy')) {
+      this.router.navigate([''], { queryParams: { mode: atob('dXM=') } }); // patriotism
+    } else if (this.number === atob('NTg2NDczNw==')) {
+      window.location.href = atob('aHR0cDovL2pucC0zci5uZXQv'); // my brother
     } else {
       this.number = '';
       this.showToast = true;

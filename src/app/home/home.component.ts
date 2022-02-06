@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HomeComponent {
   @ViewChild('r159HomeExperience') r159HomeExperience: ElementRef<HTMLDivElement> | undefined;
 
-  unicorn = false;
+  mode = '';
 
   experienceScrollData = {
     scrollLeft: 0,
@@ -22,7 +22,18 @@ export class HomeComponent {
 
   constructor(private _Activatedroute: ActivatedRoute) {
     this._Activatedroute.queryParams.subscribe(params => {
-      this.unicorn = params['unicorn'] === 'true' ? true : false; 
+      const current = new Date();
+      const today = (current.getMonth() + 1) + '-' + current.getDate();
+
+      this.mode = params['mode'] ? params['mode'] : '';
+
+      if (this.mode === '') {
+        if (today === '4-9') {
+          this.mode = atob('dW4=');
+        } else if (today === '7-4') {
+          this.mode = atob('dXM=');
+        }
+      }
     });
   }
 

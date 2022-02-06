@@ -1,24 +1,33 @@
-<div id="r159-home-banner" *ngIf="!unicorn">
+<div id="r159-home-banner" *ngIf="mode === '' || mode === 'no'">
   <img class="r159-lg" src="/assets/vehicle-friends-lg.png" alt="Pixelated truck and motorcycles">
   <img class="r159-md" src="/assets/vehicle-friends-md.png" alt="Pixelated truck carrying motorcycles">
   <img class="r159-sm" src="/assets/vehicle-friends-sm.png" alt="Pixelated motorcycles">
   <img class="r159-xs" src="/assets/vehicle-friends-xs.png" alt="Pixelated small motorcycle">
 </div>
 
-<div id="r159-home-banner" *ngIf="unicorn">
-  <img class="r159-lg" src="/assets/vehicle-friends-lg-u.png" alt="Pixelated truck and motorcycles with unicorn">
-  <img class="r159-md" src="/assets/vehicle-friends-md-u.png" alt="Pixelated truck carrying motorcycles with unicorn">
-  <img class="r159-sm" src="/assets/vehicle-friends-sm-u.png" alt="Pixelated motorcycles with unicorn">
-  <img class="r159-xs" src="/assets/vehicle-friends-xs-u.png" alt="Pixelated small motorcycle with unicorn">
+<div id="r159-home-banner" *ngIf="mode === 'un'">
+  <img class="r159-lg" src="/assets/vehicle-friends-lg-un.png" alt="Pixelated truck and motorcycles with unicorn">
+  <img class="r159-md" src="/assets/vehicle-friends-md-un.png" alt="Pixelated truck carrying motorcycles with unicorn">
+  <img class="r159-sm" src="/assets/vehicle-friends-sm-un.png" alt="Pixelated motorcycles with unicorn">
+  <img class="r159-xs" src="/assets/vehicle-friends-xs-un.png" alt="Pixelated small motorcycle with unicorn">
+</div>
+
+<div id="r159-home-banner" *ngIf="mode === 'us'">
+  <img class="r159-lg" src="/assets/vehicle-friends-lg-us.png" alt="Pixelated truck and motorcycles with US flag">
+  <img class="r159-md" src="/assets/vehicle-friends-md-us.png" alt="Pixelated truck carrying motorcycles with US flag">
+  <img class="r159-sm" src="/assets/vehicle-friends-sm-us.png" alt="Pixelated motorcycles with US flag">
+  <img class="r159-xs" src="/assets/vehicle-friends-xs-us.png" alt="Pixelated small motorcycle with US flag">
 </div>
 
 <div id="r159-home-main">
   <div class="spacer"></div>
   <div id="r159-home-about">
     <div class="r159-flex-about">
-      <img src="/assets/profile.png" class="r159-about-photo" *ngIf="!unicorn"
-        alt="Pixelated motorcycle helment headshot">
-      <img src="/assets/unicorn.png" class="r159-about-photo" *ngIf="unicorn" alt="Pixelated unicorn headshot">
+      <img src="/assets/profile.png" class="r159-about-photo" *ngIf="mode === '' || mode === 'no'"
+        alt="Pixelated black motorcycle helment headshot">
+      <img src="/assets/profile-un.png" class="r159-about-photo" *ngIf="mode == 'un'" alt="Pixelated unicorn headshot">
+      <img src="/assets/profile-us.png" class="r159-about-photo" *ngIf="mode === 'us'"
+        alt="Pixelated white USA motorcycle helment headshot">
     </div>
     <div class="r159-flex-about">
       <h1>Wayne Starr</h1>
