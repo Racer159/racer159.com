@@ -86,7 +86,7 @@ export class AppComponent {
   handlePiClick(e: MouseEvent) {
     
     if (e.shiftKey && e.ctrlKey) {
-			this.gotoURL('/web/net/code1.html');
+			this.gotoURL('http://racer159.net/net/code1.htm');
 		}
 
     this.developerSteps--;
@@ -104,6 +104,7 @@ export class AppComponent {
     if (this.developerSteps < 1) {
       this.router.navigate(['developer']);
     }
+
   }
 
   noContext() {

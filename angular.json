@@ -30,8 +30,7 @@
               "src/favicon.ico",
               "src/CNAME",
               "src/404.html",
-              "src/assets",
-              "src/web"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
@@ -101,8 +100,7 @@
               "src/favicon.ico",
               "src/CNAME",
               "src/404.html",
-              "src/assets",
-              "src/web"
+              "src/assets"
             ],
             "styles": [
               "src/styles.scss"
