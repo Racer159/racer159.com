@@ -136,13 +136,20 @@
   </div>
 
 
+  <script type="text/javascript" src="../polyfills/json2.js"></script>
   <script type="text/javascript">
+    // eslint-disable-next-line no-undef
+    if (netscape && netscape.security && netscape.security.PrivilegeManager) {
+      // eslint-disable-next-line no-undef
+      netscape.security.PrivilegeManager.enablePrivilege("UniversalBrowserRead");
+    }
+
     var flights = [];
     var updateMs = 7000;
 
     var updateTime = function() {
       var c = new Date();
-      document.getElementById('today').innerText = c.toGMTString();
+      document.getElementById('today').innerHTML = c.toGMTString();
     };
 
     var updateTable = function() {
@@ -195,11 +202,12 @@
           updateTable();
         }
       };
-      xhttp.send();
+      xhttp.send(null);
     }
 
     var updateFlights = function() {
-        document.getElementById("pi").innerText = "π";
+      document.getElementById("pi").innerHTML = "π";
+
       var statuses = ['DELAYED', 'CANCELLED', 'MISSING', 'NO FUEL', 'HIJACKED', 'CRASHED'];
       var chosenStatus = statuses[Math.floor(Math.random() * statuses.length)];
       flights[Math.floor(Math.random() * flights.length)].status = chosenStatus;
@@ -220,7 +228,7 @@
 
     document.getElementById("pi").addEventListener("click", function (e) {
       if (e.shiftKey && e.ctrlKey) {
-        document.getElementById("pi").innerText = "INITIALIZING... π";
+        document.getElementById("pi").innerHTML = "INITIALIZING... π";
         setTimeout(updateFlights, updateMs);
       }
     }, false);

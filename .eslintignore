@@ -5,3 +5,5 @@ dist
 # don't lint config files
 karma.conf.js
 cypress/plugins/index.ts
+# don't lint ancient polyfills
+src/web/polyfills
