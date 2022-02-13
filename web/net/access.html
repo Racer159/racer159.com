@@ -69,11 +69,7 @@
       border-bottom: 1px solid skyblue;
     }
 
-    tr:nth-child(2n - 1).ONTIME {
-      background-color: darkgreen;
-    }
-
-    tr:nth-child(2n - 1).ENROUTE {
+    .even {
       background-color: darkgreen;
     }
 
@@ -157,8 +153,9 @@
 
       for (var i = 0; i < flights.length; i++) {
         var f = flights[i];
+        var c = f.status.split(' ').join('') + (i % 2 === 0 ? ' even': '');
 
-        var row = '<tr class="' + f.status.split(' ').join('') + '"><td>' + f.num + '<td>' + f.airline + '<td>' + f.city + '<td>' + f.type + '<td>' + f.time + '<td>' + f.status;
+        var row = '<tr class="' + c + '"><td>' + f.num + '<td>' + f.airline + '<td>' + f.city + '<td>' + f.type + '<td>' + f.time + '<td>' + f.status;
         rows += row;
       }
 
