@@ -45,9 +45,9 @@
       if (e.keyCode == 13) {
         if (document.getElementById("password").value === atob('QkVSNTM0ODgzMw==')) {
           location.href = '/web/net/access.html';
-        }
-
-        alert('Incorrect Password');
+        } else {
+          alert('Incorrect Password');
+		}
       }
     }, false);
 

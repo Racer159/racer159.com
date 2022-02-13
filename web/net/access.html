@@ -137,8 +137,8 @@
 
 
   <script type="text/javascript">
-    const flights = [];
-    let updateMs = 7000;
+    var flights = [];
+    var updateMs = 7000;
 
     var updateTime = function() {
       var c = new Date();
@@ -170,13 +170,16 @@
 
         var statusFields = d.status.split('/');
         var status = '';
+
         if (statusFields.length === 2) {
           status = statusFields[1].toUpperCase();
         } else {
           status = statusFields[0].toUpperCase();
         }
 
-        flights.push({ num, airline, city, type, time, status });
+        var f = { num: num, airline: airline, city: city, type: type, time: time, status: status };
+
+        flights.push(f);
       }
     };
 
