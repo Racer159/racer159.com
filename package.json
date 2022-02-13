@@ -1,6 +1,8 @@
 {
   "name": "racer159-com",
   "version": "1.0.0",
+  "author": "racer159",
+  "license": "MIT",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

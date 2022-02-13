@@ -1,6 +1,8 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 
 <head>
+  <title>Code</title>
   <script type="text/javascript">
 
     setTimeout("location.href = '/web/net/characters3.html';", 250);
@@ -90,7 +92,7 @@
       height: 100%;
     }
   </style>
-  <meta charset="UTF-8">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 </head>
 
 <body>
@@ -133,73 +135,73 @@
     &nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;group_info-&gt;nblocks;&nbsp;i++)&nbsp;{
     <br><br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;unsigned&nbsp;int&nbsp;cp_count&nbsp;=&nbsp;min(NGROUPS_PER_BLO|
+    <br><br><br>
+    struct&nbsp;group_info&nbsp;init_groups&nbsp;=&nbsp;{&nbsp;.usage&nbsp;=&nbsp;ATOMIC_INIT(2)&nbsp;};
+    <br><br>
+    struct&nbsp;group_info&nbsp;*groups_alloc(int&nbsp;gidsetsize){
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp;group_info&nbsp;*group_info;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;nblocks;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
+    <br><br><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;(gidsetsize&nbsp;+&nbsp;NGROUPS_PER_BLOCK&nbsp;-&nbsp;1)&nbsp;/&nbsp;NGROUPS_PER_BLOCK;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;Make&nbsp;sure&nbsp;we&nbsp;always&nbsp;allocate&nbsp;at&nbsp;least&nbsp;one&nbsp;indirect&nbsp;block&nbsp;pointer&nbsp;*/
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;nblocks&nbsp;?&nbsp;:&nbsp;1;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;group_info&nbsp;=&nbsp;kmalloc(sizeof(*group_info)&nbsp;+&nbsp;nblocks*sizeof(gid_t&nbsp;*),&nbsp;GFP_USER);
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!group_info)
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;ngroups&nbsp;=&nbsp;gidsetsize;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;nblocks&nbsp;=&nbsp;nblocks;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;atomic_set(&amp;group_info-&gt;usage,&nbsp;1);
+    <br><br><br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gidsetsize&nbsp;&lt;=&nbsp;NGROUPS_SMALL)
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;blocks[0]&nbsp;=&nbsp;group_info-&gt;small_block;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;nblocks;&nbsp;i++)&nbsp;{
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gid_t&nbsp;*b;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;(void&nbsp;*)__get_free_page(GFP_USER);
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!b)
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto&nbsp;out_undo_partial_alloc;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;blocks[i]&nbsp;=&nbsp;b;
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;group_info;
+    <br><br><br><br>
+    out_undo_partial_alloc:
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(--i&nbsp;&gt;=&nbsp;0)&nbsp;{
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_page((unsigned&nbsp;long)group_info-&gt;blocks[i]);
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;}
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;kfree(group_info);
+    <br><br>
+    &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;
+    <br><br>
+    }
   </div>
-  <br><br><br>
-  struct&nbsp;group_info&nbsp;init_groups&nbsp;=&nbsp;{&nbsp;.usage&nbsp;=&nbsp;ATOMIC_INIT(2)&nbsp;};
-  <br><br>
-  struct&nbsp;group_info&nbsp;*groups_alloc(int&nbsp;gidsetsize){
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;struct&nbsp;group_info&nbsp;*group_info;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;nblocks;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;i;
-  <br><br><br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;(gidsetsize&nbsp;+&nbsp;NGROUPS_PER_BLOCK&nbsp;-&nbsp;1)&nbsp;/&nbsp;NGROUPS_PER_BLOCK;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;/*&nbsp;Make&nbsp;sure&nbsp;we&nbsp;always&nbsp;allocate&nbsp;at&nbsp;least&nbsp;one&nbsp;indirect&nbsp;block&nbsp;pointer&nbsp;*/
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;nblocks&nbsp;=&nbsp;nblocks&nbsp;?&nbsp;:&nbsp;1;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;group_info&nbsp;=&nbsp;kmalloc(sizeof(*group_info)&nbsp;+&nbsp;nblocks*sizeof(gid_t&nbsp;*),&nbsp;GFP_USER);
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!group_info)
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;ngroups&nbsp;=&nbsp;gidsetsize;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;nblocks&nbsp;=&nbsp;nblocks;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;atomic_set(&amp;group_info-&gt;usage,&nbsp;1);
-  <br><br><br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(gidsetsize&nbsp;&lt;=&nbsp;NGROUPS_SMALL)
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;blocks[0]&nbsp;=&nbsp;group_info-&gt;small_block;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;else&nbsp;{
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;nblocks;&nbsp;i++)&nbsp;{
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;gid_t&nbsp;*b;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;b&nbsp;=&nbsp;(void&nbsp;*)__get_free_page(GFP_USER);
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(!b)
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;goto&nbsp;out_undo_partial_alloc;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;group_info-&gt;blocks[i]&nbsp;=&nbsp;b;
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;}
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;group_info;
-  <br><br><br><br>
-  out_undo_partial_alloc:
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;while&nbsp;(--i&nbsp;&gt;=&nbsp;0)&nbsp;{
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;free_page((unsigned&nbsp;long)group_info-&gt;blocks[i]);
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;}
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;kfree(group_info);
-  <br><br>
-  &nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;
-  <br><br>
-  }
   <div class="footer" id="menu">
     <table width="50%">
 

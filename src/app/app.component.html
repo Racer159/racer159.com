@@ -20,7 +20,7 @@
       <a class="print-only">https://racer159.com</a>
     </div>
   </fast-toolbar>
-  <fast-menu id="r159-git-menu" [class]="showGitMenu ? 'shown' : 'hidden'">
+  <fast-menu id="r159-git-menu" class="hidden" [class]="showGitMenu ? 'shown' : 'hidden'">
     <fast-menu-item (click)="gotoURL('https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i>
       <p>GitHub</p>
     </fast-menu-item>
@@ -40,7 +40,7 @@
 </main>
 
 <footer>
-  <div id="r159-notifications" [class]="showToast ? 'shown' : 'hidden'">
+  <div id="r159-notifications" class="hidden" [class]="showToast ? 'shown' : 'hidden'">
     <span *ngIf="developerSteps > 0">You are now {{developerSteps}} {{developerSteps != 1 ? "steps" : "step"}} away from
       being a developer.</span>
     <span *ngIf="developerSteps < 1">Developer mode has been turned on.</span>
