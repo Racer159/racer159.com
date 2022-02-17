@@ -15,7 +15,7 @@ export class HomeComponent {
     scrollLeft: 0,
     scrollWidth: 2,
     offsetWidth: 1
-  }
+  };
   updateTimeout: number | undefined;
   scrolling: undefined | number;
   scrollTo = 0;
@@ -93,7 +93,7 @@ export class HomeComponent {
           scrollLeft: this.r159HomeExperience.nativeElement.scrollLeft,
           scrollWidth: this.r159HomeExperience.nativeElement.scrollWidth,
           offsetWidth: this.r159HomeExperience.nativeElement.offsetWidth
-        }
+        };
       }
     };
 
