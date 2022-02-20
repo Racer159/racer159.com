@@ -21,7 +21,8 @@ fast-badge {
   flex: 0 0 $card-width;
 
   img {
-    width: 100%;
+    width: $card-width;
+    height: $card-width;
   }
 
   div {
@@ -33,6 +34,7 @@ fast-badge {
   background-color: var(--accent-fill-rest);
   border-radius: 50%;
   width: $card-width;
+  height: $card-width;
 }
 
 .r159-lg {
@@ -66,7 +68,7 @@ fast-badge {
     margin-left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-fill-rest);
-    height: calc($card-width * 2);
+    height: $card-width * 2;
   }
 }
 
@@ -177,11 +179,11 @@ fast-badge {
 
 @media screen and (max-width: v.$xxs-max-width) {
   .r159-about-photo {
-    width: calc($card-width - (v.$base-px-unit * 10));
+    width: $card-width - (v.$base-px-unit * 10);
   }
 
   .r159-flex-sm {
-    flex-basis: calc($card-width - (v.$base-px-unit * 10));
+    flex-basis: $card-width - (v.$base-px-unit * 10);
     height: 656px;
   }
 
@@ -190,7 +192,7 @@ fast-badge {
   }
 
   #r159-home-banner img {
-    height: calc(($card-width - (v.$base-px-unit * 10)) * 2);
+    height: ($card-width - (v.$base-px-unit * 10)) * 2;
   }
 
   #r159-home-experience-left,
@@ -204,6 +206,7 @@ fast-badge {
     position: absolute;
     background-color: white;
     width: 104px;
+    height: 104px;
     right: v.$base-px-unit * 2;
   }
 

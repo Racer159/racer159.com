@@ -1,8 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-@font-face { font-family: Rubik; src: url("/assets/webfonts/Rubik-VariableFont_wght.ttf"); }
-
-@font-face { font-family: Rubik; src: url("/assets/webfonts/Rubik-Italic-VariableFont_wght.ttf"); font-style: italic; }
+@font-face { font-family: Rubik; src: url("/assets/webfonts/Rubik-VariableFont_wght.ttf"); font-display: swap; }
 
 body {
   font-family: var(--body-font);

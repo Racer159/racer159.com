@@ -32,8 +32,19 @@ $toolbar-height: calc(
 }
 
 .r159-header-icon {
+  width: v.$base-px-unit * 4;
+  height: v.$base-px-unit * 4;
   border-radius: 50%;
   background-color: var(--accent-fill-rest);
+
+  /* Firefox */
+  image-rendering: crisp-edges;
+
+  /* Chromium + Safari */
+  image-rendering: pixelated;
+
+  /* Maintain Aspect Ratio */
+  object-fit: contain;
 }
 
 #r159-git-menu {
