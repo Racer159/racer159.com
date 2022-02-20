@@ -1,0 +1,26 @@
+@use "../../variables" as v;
+
+#r159-privacy-main {
+  max-width: v.$lg-min-width + (v.$base-px-unit * 10);
+  width: calc(100vw - 200px);
+  margin: v.$base-px-unit * 6 auto;
+}
+
+.break {
+  page-break-after: always;
+}
+
+@mixin privacy-widen {
+  #r159-privacy-main {
+    width: calc(100vw - v.$base-px-unit * 4);
+    margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
+  }
+}
+
+@media screen and (max-width: v.$xs-max-width) {
+  @include privacy-widen;
+}
+
+@media print {
+  @include privacy-widen;
+}
