@@ -180,14 +180,20 @@ fast-badge {
 @media screen and (max-width: v.$xxs-max-width) {
   .r159-about-photo {
     width: $card-width - (v.$base-px-unit * 10);
+    height: $card-width - (v.$base-px-unit * 10);
   }
 
   .r159-flex-sm {
     flex-basis: $card-width - (v.$base-px-unit * 10);
-    height: 656px;
+    height: 640px;
+
+    img {
+      width: $card-width - (v.$base-px-unit * 10);
+      height: $card-width - (v.$base-px-unit * 10);
+    }
   }
 
-  .acronym {
+  .hide-xss {
     display: none;
   }
 
