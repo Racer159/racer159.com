@@ -13,6 +13,10 @@ img {
   object-fit: contain;
 }
 
+ul {
+  padding-left: 26px;
+}
+
 fast-badge {
   margin: 0 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px) 0;
 }
