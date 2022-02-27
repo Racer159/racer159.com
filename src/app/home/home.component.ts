@@ -25,7 +25,7 @@ export class HomeComponent {
       const current = new Date();
       const today = (current.getMonth() + 1) + '-' + current.getDate();
 
-      this.mode = params['mode'] ? params['mode'] : '';
+      this.mode = params['mode'] ? params['mode'] : 'ua';
 
       if (this.mode === '') {
         if (today === '4-9') {

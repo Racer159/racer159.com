@@ -19,6 +19,13 @@
   <img class="r159-xs" src="/assets/vehicle-friends-xs-us.png" alt="Pixelated small motorcycle with US flag">
 </div>
 
+<div id="r159-home-banner" *ngIf="mode === 'ua'">
+  <img class="r159-lg" src="/assets/vehicle-friends-lg-ua.png" alt="Pixelated truck and motorcycles with Ukraine flag">
+  <img class="r159-md" src="/assets/vehicle-friends-md-ua.png" alt="Pixelated truck carrying motorcycles with Ukraine flag">
+  <img class="r159-sm" src="/assets/vehicle-friends-sm-ua.png" alt="Pixelated motorcycles with Ukraine flag">
+  <img class="r159-xs" src="/assets/vehicle-friends-xs-ua.png" alt="Pixelated small motorcycle with Ukraine flag">
+</div>
+
 <div id="r159-home-main">
   <div class="spacer"></div>
   <div id="r159-home-about">
@@ -28,6 +35,8 @@
       <img src="/assets/profile-un.png" class="r159-about-photo" *ngIf="mode == 'un'" alt="Pixelated unicorn headshot">
       <img src="/assets/profile-us.png" class="r159-about-photo" *ngIf="mode === 'us'"
         alt="Pixelated white USA motorcycle helment headshot">
+      <img src="/assets/profile-ua.png" class="r159-about-photo" *ngIf="mode === 'ua'"
+        alt="Pixelated white Ukraine motorcycle helment headshot">
     </div>
     <div class="r159-flex-about">
       <h1>Wayne Starr</h1>
