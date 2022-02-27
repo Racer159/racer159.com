@@ -5,9 +5,10 @@
       <span class="no-print" id="r159-title">Racer159</span>
     </label>
     <div slot="end">
-      <fast-button appearance="accent" (click)="toggleLightMode()" aria-label="Toggle Light Mode">
-        <i class="far fa-lg fa-lightbulb-slash" *ngIf="darkMode"></i>
-        <i class="far fa-lg fa-lightbulb-on" *ngIf="!darkMode"></i>
+      <fast-switch (click)="toggleLightMode()" [checked]="!darkMode" aria-label="Toggle Light Mode">
+      </fast-switch>
+      <fast-button appearance="stealth" (click)="gotoRoute('/privacy')" aria-label="Page Info">
+        <i class="far fa-lg fa-info-circle"></i>
       </fast-button>
       <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"
         aria-label="LinkedIn Profile">

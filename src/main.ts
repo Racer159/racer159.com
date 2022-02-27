@@ -14,6 +14,7 @@ import {
   fastDivider,
   fastMenu,
   fastMenuItem,
+  fastSwitch,
   bodyFont,
   baseLayerLuminance,
   StandardLuminance,
@@ -43,7 +44,8 @@ provideFASTDesignSystem().register(
   fastBadge(),
   fastDivider(),
   fastMenu(),
-  fastMenuItem());
+  fastMenuItem(),
+  fastSwitch());
 
 const color = parseColorHexRGB("#0159A0");
 if (color) {

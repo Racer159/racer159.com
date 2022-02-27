@@ -212,14 +212,6 @@ fast-badge {
 }
 
 @media print {
-  .r159-about-photo {
-    position: absolute;
-    background-color: white;
-    width: 104px;
-    height: 104px;
-    right: v.$base-px-unit * 2;
-  }
-
   .r159-flex-sm {
     display: block;
     page-break-inside: avoid;
