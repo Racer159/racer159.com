@@ -26,6 +26,10 @@
   <img class="r159-xs" src="/assets/vehicle-friends-xs-ua.png" alt="Pixelated small motorcycle with Ukraine flag">
 </div>
 
+<div id="r159-home-banner" *ngIf="mode === 'ea'">
+  <img src="/assets/vehicle-friends-lg-ea.png" alt="Pixelated Jesus with rays from heaven in front of three crosses">
+</div>
+
 <div id="r159-home-main">
   <div class="spacer"></div>
   <div id="r159-home-about">
@@ -37,6 +41,8 @@
         alt="Pixelated white USA motorcycle helment headshot">
       <img src="/assets/profile-ua.png" class="r159-about-photo" *ngIf="mode === 'ua'"
         alt="Pixelated white Ukraine motorcycle helment headshot">
+      <img src="/assets/profile-ea.png" class="r159-about-photo" *ngIf="mode === 'ea'"
+        alt="Pixelated empty tomb with stone rolled away">
     </div>
     <div class="r159-flex-about">
       <h1>Wayne Starr</h1>

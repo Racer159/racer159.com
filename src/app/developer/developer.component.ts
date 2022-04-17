@@ -74,6 +74,8 @@ export class DeveloperComponent implements OnInit {
       this.router.navigate([''], { queryParams: { mode: atob('dW4=') } }); // single-horn
     } else if (this.number === atob('ODcyODcyODcy')) {
       this.router.navigate([''], { queryParams: { mode: atob('dXM=') } }); // patriotism
+    } else if (this.number === atob('NTM3ODc=')) {
+      this.router.navigate([''], { queryParams: { mode: atob('ZWE=') } }); // jesus
     } else if (this.number === atob('NTg2NDczNw==')) {
       window.location.href = atob('aHR0cDovL2pucC0zci5uZXQv'); // my brother
     } else {
