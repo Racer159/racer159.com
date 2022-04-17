@@ -34,6 +34,10 @@ export class AppComponent {
 
   constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
     this.darkMode = baseLayerLuminance.getValueFor(this.document.body) < 0.5 ? true : false;
+
+    window.onkeydown = (event) => {
+      if (event.key === 'Escape') { this.showGitMenu = false; }
+    };
   }
   
   toggleLightMode() {

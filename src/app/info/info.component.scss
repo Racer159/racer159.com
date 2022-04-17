@@ -1,3 +1,155 @@
-p {
-  font-weight: bold;
+@use "../../variables" as v;
+
+$gap: v.$base-px-unit * 6;
+
+.r159-page-main {
+  display: flex;
+  flex-direction: column;
+  gap: $gap;
+}
+
+.r159-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $gap;
+  padding: $gap calc($gap / 2);
+
+  h2 {
+    margin: 0;
+  }
+}
+
+.r159-colors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: $gap;
+  flex-grow: 1;
+}
+
+.r159-info-container {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  gap: $gap;
+  text-align: center;
+  color: var(--neutral-foreground-rest);
+  text-decoration: none;
+}
+
+@mixin info-interact {
+  color: var(--neutral-fill-strong-hover);
+
+  .r159-blue {
+    border: 8px solid rgb(255 255 255 / 40%);
+  }
+
+  .r159-darkgray {
+    border: 8px solid rgb(255 255 255 / 40%);
+  }
+
+  .r159-lightgray {
+    border: 8px solid rgb(0 0 0 / 40%);
+  }
+}
+
+.r159-info-container:hover {
+  @include info-interact;
+}
+
+.r159-info-container:focus {
+  @include info-interact;
+}
+
+.r159-font {
+  flex: 0 1 528px;
+}
+
+.r159-info-icons {
+  display: flex;
+  gap: $gap;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.r159-info-icon {
+  flex-grow: 1;
+  font-size: 16em;
+  line-height: 1em;
+}
+
+.r159-info-example {
+  font-size: 12em;
+  line-height: 1.0625;
+}
+
+.r159-color-circle {
+  height: 1em;
+  width: 1em;
+  border-radius: 50%;
+  margin: auto;
+  transition:
+    background-color var(--anim-length) var(--anim-style),
+    color var(--anim-length) var(--anim-style),
+    border var(--anim-length) var(--anim-style);
+}
+
+.r159-blue {
+  background-color: #0159a0;
+  border: 8px solid rgb(255 255 255 / 25%);
+}
+
+.r159-darkgray {
+  background-color: #1e1e1e;
+  border: 8px solid rgb(255 255 255 / 25%);
+}
+
+.r159-lightgray {
+  background-color: #e5e5e5;
+  border: 8px solid rgb(0 0 0 / 25%);
+}
+
+@media screen and (max-width: v.$xs-max-width) {
+  fast-card {
+    background-color: var(--neutral-layer-2);
+    box-shadow: none;
+  }
+
+  .r159-font {
+    flex: 0 1 300px;
+    font-size: 0.75em;
+  }
+
+  .r159-page-main {
+    gap: 0;
+  }
+}
+
+@media print {
+  h1 {
+    margin: 0;
+  }
+
+  fast-card {
+    box-shadow: none;
+  }
+
+  .r159-page-main {
+    gap: v.$base-px-unit * 2;
+  }
+
+  .r159-info {
+    padding: 0 v.$base-px-unit * 3;
+    gap: v.$base-px-unit * 3;
+  }
+
+  .r159-colors {
+    gap: v.$base-px-unit * 2;
+  }
+
+  .r159-info-container {
+    gap: v.$base-px-unit * 3;
+    color: black;
+  }
 }

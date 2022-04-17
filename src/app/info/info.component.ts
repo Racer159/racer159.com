@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-info',
@@ -7,4 +8,13 @@ import { Component } from '@angular/core';
 })
 export class InfoComponent {
 
+  constructor(private router: Router) { }
+  
+  gotoURL(url: string) {
+    window.location.href = url;
+  }
+
+  gotoRoute(url: string) {
+    this.router.navigate([url]);
+  }
 }

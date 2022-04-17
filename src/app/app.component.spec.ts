@@ -32,8 +32,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('fast-toolbar label img')).toBeTruthy();
-    expect(compiled.querySelector('fast-toolbar label')?.textContent).toContain('Racer159');
+    expect(compiled.querySelector('fast-toolbar a img')).toBeTruthy();
+    expect(compiled.querySelector('fast-toolbar a')?.textContent).toContain('Racer159');
   });
 
   it('should render toolbar buttons and have print-only text', () => {

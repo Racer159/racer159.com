@@ -20,7 +20,8 @@ $toolbar-height: calc(
     align-items: center;
     gap: calc(1.5 * var(--toolbar-item-gap));
     margin-left: var(--toolbar-item-gap);
-    cursor: pointer;
+    color: var(--neutral-foreground-rest);
+    text-decoration: none;
   }
 
   [slot="end"] {
@@ -72,17 +73,19 @@ $toolbar-height: calc(
   position: fixed;
   z-index: 100;
   bottom: 0;
-  cursor: pointer;
 }
 
 #r159-copyright {
   left: 0;
   padding: v.$base-px-unit * 3 v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px);
+  color: var(--neutral-foreground-rest);
+  text-decoration: none;
 }
 
 #r159-footer {
   right: 0;
   padding: v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px) v.$base-px-unit * 3;
+  cursor: pointer;
 }
 
 #r159-notifications {
@@ -106,7 +109,8 @@ $toolbar-height: calc(
 }
 
 @media print {
-  fast-button {
+  fast-button,
+  fast-switch {
     display: none;
   }
 

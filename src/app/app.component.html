@@ -1,13 +1,13 @@
 <nav>
   <fast-toolbar id="r159-toolbar" style="width: 100%">
-    <label slot="label" (click)="gotoRoute('/')">
+    <a [routerLink]="'/'" slot="label">
       <img src="/assets/icon.png" class="r159-header-icon" alt="Pixelated motorcycle and truck" />
       <span class="no-print" id="r159-title">Racer159</span>
-    </label>
+    </a>
     <div slot="end">
-      <fast-switch (click)="toggleLightMode()" [checked]="!darkMode" aria-label="Toggle Light Mode">
+      <fast-switch (change)="toggleLightMode()" [checked]="!darkMode" aria-label="Toggle Light Mode">
       </fast-switch>
-      <fast-button appearance="stealth" (click)="gotoRoute('/privacy')" aria-label="Page Info">
+      <fast-button appearance="stealth" (click)="gotoRoute('/info')" aria-label="Page Info">
         <i class="far fa-lg fa-info-circle"></i>
       </fast-button>
       <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"
@@ -47,9 +47,9 @@
     <span *ngIf="developerSteps < 1">Developer mode has been turned on.</span>
   </div>
 
-  <div id="r159-copyright" (click)="gotoURL('https://archive.org/details/CopyingIsNotTheft1080p')">
+  <a href="https://archive.org/details/CopyingIsNotTheft1080p" id="r159-copyright">
     © 2022
-  </div>
+  </a>
 
   <div id="r159-footer" (click)="handlePiClick($event)" (contextmenu)="noContext()">
     π

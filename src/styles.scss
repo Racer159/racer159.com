@@ -1,4 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
+@use "variables" as v;
 
 @font-face { font-family: Rubik; src: url("/assets/webfonts/Rubik-VariableFont_wght.ttf"); font-display: swap; }
 
@@ -71,6 +72,12 @@ fast-card {
   background-color: var(--neutral-layer-1);
 }
 
+.r159-page-main {
+  max-width: v.$lg-min-width + (v.$base-px-unit * 10);
+  width: calc(100vw - 200px);
+  margin: v.$base-px-unit * 6 auto;
+}
+
 .hidden {
   visibility: hidden;
   opacity: 0;
@@ -87,7 +94,22 @@ fast-card {
   display: none;
 }
 
+@mixin page-widen {
+  .r159-page-main {
+    width: calc(100vw - v.$base-px-unit * 4);
+    margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
+  }
+}
+
+@media screen and (max-width: v.$xs-max-width) {
+  @include page-widen;
+}
+
 @media print {
+  .break {
+    page-break-after: always;
+  }
+
   .print-only {
     display: block;
   }
@@ -106,4 +128,6 @@ fast-card {
   a {
     color: #013d6d;
   }
+
+  @include page-widen;
 }
