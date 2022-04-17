@@ -26,7 +26,7 @@ export class HomeComponent {
       const today = (current.getMonth() + 1) + '-' + current.getDate();
       const eas = this.getEaster(current.getFullYear());
 
-      this.mode = params['mode'] ? params['mode'] : 'ua';
+      this.mode = params['mode'] ? params['mode'] : '';
 
       if (this.mode === '') {
         if (today === '4-9') {
