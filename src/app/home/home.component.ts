@@ -35,6 +35,8 @@ export class HomeComponent {
           this.mode = atob('dXM=');
         } else if (today === eas[0] + '-' + eas[1]) {
           this.mode = atob('ZWE=');
+        } else{
+          this.mode = 'ua';
         }
       }
     });
