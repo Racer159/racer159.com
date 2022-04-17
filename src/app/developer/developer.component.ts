@@ -24,10 +24,16 @@ export class DeveloperComponent implements OnInit {
     window.scrollTo(0, 0);
   }
 
-playDTMF(e: MouseEvent | TouchEvent, high: number, low: number, pressed: string) {
+  playDTMF(e: MouseEvent | TouchEvent | KeyboardEvent   , high: number, low: number, pressed: string) {
     if (e.type === 'touchstart') {
       e.stopPropagation();
       e.preventDefault();
+    }
+
+    if (e.type === 'keydown') {
+      if ((e as KeyboardEvent).key !== 'Enter' && (e as KeyboardEvent).key !== ' ') {
+        return;
+      }
     }
 
     this.number += pressed;

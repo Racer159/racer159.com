@@ -5,68 +5,80 @@
     </div>
     <div class="row">
         <fast-button (mousedown)="playDTMF($event, 1209, 697, '1')" (touchstart)="playDTMF($event, 1209, 697, '1')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1209, 697, '1')" (keyup)="stopDTMF()">
             1<br>
             <span>&nbsp;</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1336, 697, '2')" (touchstart)="playDTMF($event, 1336, 697, '2')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1336, 697, '2')" (keyup)="stopDTMF()">
             2<br>
             <span>ABC</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1477, 697, '3')" (touchstart)="playDTMF($event, 1477, 697, '3')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1477, 697, '3')" (keyup)="stopDTMF()">
             3<br>
             <span>DEF</span>
         </fast-button>
     </div>
     <div class="row">
         <fast-button (mousedown)="playDTMF($event, 1209, 770, '4')" (touchstart)="playDTMF($event, 1209, 770, '4')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1209, 770, '4')" (keyup)="stopDTMF()">
             4<br>
             <span>GHI</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1336, 770, '5')" (touchstart)="playDTMF($event, 1336, 770, '5')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1336, 770, '5')" (keyup)="stopDTMF()">
             5<br>
             <span>JKL</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1477, 770, '6')" (touchstart)="playDTMF($event, 1477, 770, '6')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1477, 770, '6')" (keyup)="stopDTMF()">
             6<br>
             <span>MNO</span>
         </fast-button>
     </div>
     <div class="row">
         <fast-button (mousedown)="playDTMF($event, 1209, 852, '7')" (touchstart)="playDTMF($event, 1209, 852, '7')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1209, 852, '7')" (keyup)="stopDTMF()">
             7<br>
             <span>PQRS</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1336, 852, '8')" (touchstart)="playDTMF($event, 1336, 852, '8')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1336, 852, '8')" (keyup)="stopDTMF()">
             8<br>
             <span>TUV</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1477, 852, '9')" (touchstart)="playDTMF($event, 1477, 852, '9')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1477, 852, '9')" (keyup)="stopDTMF()">
             9<br>
             <span>WXYZ</span>
         </fast-button>
     </div>
     <div class="row">
         <fast-button (mousedown)="playDTMF($event, 1209, 941, '*')" (touchstart)="playDTMF($event, 1209, 941, '*')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1209, 941, '*')" (keyup)="stopDTMF()">
             *<br>
             <span>&nbsp;</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1336, 941, '0')" (touchstart)="playDTMF($event, 1336, 941, '0')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1336, 941, '0')" (keyup)="stopDTMF()">
             0<br>
             <span>OPER</span>
         </fast-button>
         <fast-button (mousedown)="playDTMF($event, 1477, 941, '#')" (touchstart)="playDTMF($event, 1477, 941, '#')"
-            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()">
+            (mouseup)="stopDTMF()" (mouseleave)="stopDTMF()" (touchend)="stopDTMF()" (contextmenu)="noContext()"
+            (keydown)="playDTMF($event, 1477, 941, '#')" (keyup)="stopDTMF()">
             #<br>
             <span>&nbsp;</span>
         </fast-button>

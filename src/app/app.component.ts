@@ -88,6 +88,7 @@ export class AppComponent {
   }
 
   handlePiClick(e: MouseEvent) {
+    e.preventDefault();
     
     if (e.shiftKey && e.ctrlKey) {
 			this.gotoURL('http://racer159.net/net/code1.htm');
