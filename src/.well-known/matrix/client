@@ -1,0 +1,8 @@
+{
+    "m.homeserver": {
+        "base_url": "https://racer159.ems.host"
+    },
+    "m.identity_server": {
+        "base_url": "https://vector.im"
+    }
+}

@@ -30,7 +30,9 @@
               "src/favicon.ico",
               "src/CNAME",
               "src/404.html",
-              "src/assets"
+              "src/assets",
+              "src/.well-known",
+              "src/_config.yml"
             ],
             "styles": [
               "src/styles.scss"
@@ -142,5 +144,7 @@
       }
     }
   },
-  "defaultProject": "racer159-com"
+  "cli": {
+    "analytics": false
+  }
 }
