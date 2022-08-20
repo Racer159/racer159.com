@@ -79,6 +79,10 @@ fast-badge {
   }
 }
 
+#r159-home-banner-overlay-wrapper {
+  overflow: hidden;
+}
+
 #r159-home-banner-overlay {
   margin: v.$base-px-unit * -4;
   border: v.$base-px-unit * 4 solid var(--neutral-layer-2);
