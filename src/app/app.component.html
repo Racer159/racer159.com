@@ -10,7 +10,7 @@
       <fast-button appearance="stealth" (click)="gotoRoute('/info')" aria-label="Page Info">
         <i class="far fa-lg fa-info-circle"></i>
       </fast-button>
-      <fast-button appearance="stealth" (click)="gotoURL('https://www.linkedin.com/in/racer159/')"
+      <fast-button appearance="stealth" (click)="gotoURL($event, 'https://www.linkedin.com/in/racer159/')"
         aria-label="LinkedIn Profile">
         <i class="fab fa-lg fa-linkedin-in"></i>
       </fast-button>
@@ -22,13 +22,13 @@
     </div>
   </fast-toolbar>
   <fast-menu id="r159-git-menu" class="hidden" [class]="showGitMenu ? 'shown' : 'hidden'">
-    <fast-menu-item (click)="gotoURL('https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i>
+    <fast-menu-item (click)="gotoURL($event, 'https://github.com/Racer159')" (keydown)="gotoURL($event, 'https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i>
       <p>GitHub</p>
     </fast-menu-item>
-    <fast-menu-item (click)="gotoURL('https://gitlab.com/Racer159')"><i class="fab fa-lg fa-gitlab" slot="start"></i>
+    <fast-menu-item (click)="gotoURL($event, 'https://gitlab.com/Racer159')" (keydown)="gotoURL($event, 'https://gitlab.com/Racer159')"><i class="fab fa-lg fa-gitlab" slot="start"></i>
       <p>GitLab</p>
     </fast-menu-item>
-    <fast-menu-item (click)="gotoURL('https://repo1.dso.mil/wayne.starr')"><i class="fab fa-lg fa-git-alt"
+    <fast-menu-item (click)="gotoURL($event, 'https://repo1.dso.mil/wayne.starr')" (keydown)="gotoURL($event, 'https://repo1.dso.mil/wayne.starr')"><i class="fab fa-lg fa-git-alt"
         slot="start"></i>
       <p>Repo One</p>
     </fast-menu-item>

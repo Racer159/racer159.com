@@ -4,8 +4,12 @@ $toolbar-height: calc(
   (((var(--base-height-multiplier) + var(--density) + 3) * var(--design-unit) + var(--focus-stroke-width)) * 1px)
 );
 
+footer {
+  background: var(--neutral-layer-2);
+}
+
 #r159-toolbar {
-  border-bottom: calc(var(--focus-stroke-width) * 1px) solid var(--accent-fill-rest);
+  border-bottom: calc(var(--focus-stroke-width) * 1.5px) solid var(--accent-fill-rest);
   position: fixed;
   z-index: 100;
   display: flex;
@@ -122,5 +126,9 @@ $toolbar-height: calc(
 
   #r159-content {
     padding-top: 34px;
+  }
+
+  footer {
+    background: transparent;
   }
 }

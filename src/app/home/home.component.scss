@@ -39,6 +39,8 @@ fast-badge {
   border-radius: 50%;
   width: $card-width;
   height: $card-width;
+  box-shadow: 0 0 2.9px rgba(0, 0, 0, calc(.11 * (2 - var(--background-luminance, 1)))),
+              0 -1.9px 3.6px rgba(0, 0, 0, calc(.13 * (2 - var(--background-luminance, 1))));
 }
 
 .r159-lg {
@@ -62,11 +64,12 @@ fast-badge {
 }
 
 #r159-home-banner {
-  position: relative;
+  position: fixed;
   overflow: hidden;
   width: 100%;
   border-bottom-right-radius: v.$base-px-unit * 4;
   border-bottom-left-radius: v.$base-px-unit * 4;
+  z-index: -1;
 
   img {
     margin-left: 50%;
@@ -76,13 +79,30 @@ fast-badge {
   }
 }
 
+#r159-home-banner-overlay {
+  margin: v.$base-px-unit * -4;
+  border: v.$base-px-unit * 4 solid var(--neutral-layer-2);
+  width: 100%;
+  border-bottom-right-radius: v.$base-px-unit * 8;
+  border-bottom-left-radius: v.$base-px-unit * 8;
+  height: $card-width * 2;
+  box-shadow: inset 0 0 2.9px rgba(0, 0, 0, calc(.11 * (2 - var(--background-luminance, 1)))),
+              inset 0 -1.9px 3.6px rgba(0, 0, 0, calc(.13 * (2 - var(--background-luminance, 1))));
+}
+
+#r159-home-main-wrapper {
+  padding: v.$base-px-unit * 4 0;
+  width: 100%;
+  background: var(--neutral-layer-2);
+}
+
 #r159-home-main {
   display: flex;
   flex-flow: row wrap;
   gap: v.$base-px-unit * 3;
   max-width: v.$lg-min-width + (v.$base-px-unit * 10);
   width: calc(100vw - 200px);
-  margin: v.$base-px-unit * 6 auto;
+  margin: v.$base-px-unit * 2 auto;
   justify-content: center;
 }
 
@@ -178,6 +198,11 @@ fast-badge {
     margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
   }
 
+  #r159-home-banner img,
+  #r159-home-banner-overlay {
+    height: $card-width * 1.75;
+  }
+
   @include col-about;
 }
 
@@ -201,8 +226,9 @@ fast-badge {
     display: none;
   }
 
-  #r159-home-banner img {
-    height: ($card-width - (v.$base-px-unit * 10)) * 2;
+  #r159-home-banner img,
+  #r159-home-banner-overlay {
+    height: $card-width * 1.5;
   }
 
   #r159-home-experience-left,
@@ -239,8 +265,17 @@ fast-badge {
     }
   }
 
-  #r159-home-banner img {
-    height: 275px;
+  #r159-home-banner {
+    position: relative;
+
+    img {
+      height: 275px;
+    }
+  }
+
+  #r159-home-main-wrapper {
+    background: transparent;
+    padding: 0;
   }
 
   #r159-home-main {

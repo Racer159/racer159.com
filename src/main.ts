@@ -16,8 +16,6 @@ import {
   fastMenuItem,
   fastSwitch,
   bodyFont,
-  baseLayerLuminance,
-  StandardLuminance,
   density,
   controlCornerRadius,
   SwatchRGB,
@@ -52,10 +50,5 @@ if (color) {
   accentPalette.setValueFor(document.body, PaletteRGB.from(SwatchRGB.from(color)));
 }
 bodyFont.setValueFor(document.body, "Rubik, sans-serif");
-if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-  baseLayerLuminance.setValueFor(document.body, StandardLuminance.LightMode);
-} else {
-  baseLayerLuminance.setValueFor(document.body, 0.15);
-}
 density.setValueFor(document.body, 1.25);
 controlCornerRadius.setValueFor(document.body, 3);

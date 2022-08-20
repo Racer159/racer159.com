@@ -1,4 +1,4 @@
-import { Component, Inject } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import {
   baseLayerLuminance,
@@ -18,8 +18,8 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  // lightmode handling
+export class AppComponent implements OnInit {
+  // lightmode and color handling
   darkMode = false;
   lightModeToggleCount = 0;
   colors = ["#ff0000", "#ff7f00", "#ffd700", "#008000", "#4d4dff", "#4b0082", "#9400d3"];
@@ -33,11 +33,19 @@ export class AppComponent {
   toastTimeout: undefined | number;
 
   constructor(@Inject(DOCUMENT) private document: Document, private router: Router) {
-    this.darkMode = baseLayerLuminance.getValueFor(this.document.body) < 0.5 ? true : false;
-
     window.onkeydown = (event) => {
       if (event.key === 'Escape') { this.showGitMenu = false; }
     };
+  }
+
+  ngOnInit() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+      this.darkMode = false;
+      baseLayerLuminance.setValueFor(document.body, StandardLuminance.LightMode);
+    } else {
+      this.darkMode = true;
+      baseLayerLuminance.setValueFor(document.body, 0.15);
+    }
   }
   
   toggleLightMode() {
@@ -58,24 +66,23 @@ export class AppComponent {
           const color = parseColorHexRGB(this.colors[this.currentColor]);
           if (color) {
             accentPalette.setValueFor(this.document.body, PaletteRGB.from(SwatchRGB.from(color)));
-            if (this.currentColor < this.colors.length - 1) {
-              this.currentColor++;
-            } else {
-              this.currentColor = 0;
-            }
+            this.currentColor < this.colors.length - 1 ? this.currentColor++ : this.currentColor = 0;
           }
         }, 300);
       }
     }
 
-    if (this.darkMode) {
-      baseLayerLuminance.setValueFor(this.document.body, 0.15);
-    } else {
-      baseLayerLuminance.setValueFor(this.document.body, StandardLuminance.LightMode);
-    }
+    const baseLuminance = this.darkMode ? 0.15 : StandardLuminance.LightMode;
+    baseLayerLuminance.setValueFor(this.document.body, baseLuminance);
   }
 
-  gotoURL(url: string) {
+  gotoURL(e: KeyboardEvent | MouseEvent, url: string) {
+    if (e.type === 'keydown') {
+      if ((e as KeyboardEvent).key !== 'Enter' && (e as KeyboardEvent).key !== ' ') {
+        return;
+      }
+    }
+
     window.location.href = url;
   }
 
@@ -91,7 +98,7 @@ export class AppComponent {
     e.preventDefault();
     
     if (e.shiftKey && e.ctrlKey) {
-			this.gotoURL('http://racer159.net/net/code1.htm');
+			window.location.href = 'http://racer159.net/net/code1.htm';
 		}
 
     this.developerSteps--;
