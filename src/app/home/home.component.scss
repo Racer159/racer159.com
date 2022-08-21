@@ -60,6 +60,10 @@ fast-badge {
   display: none;
 }
 
+.show-xxs {
+  display: none;
+}
+
 .spacer {
   width: 100%;
 }
@@ -108,7 +112,7 @@ fast-badge {
   gap: v.$base-px-unit * 3;
   max-width: v.$lg-min-width + (v.$base-px-unit * 10);
   width: calc(100vw - 200px);
-  margin: v.$base-px-unit * 2 auto;
+  margin: v.$base-px-unit * 2 auto v.$base-px-unit * 4;
   justify-content: center;
 }
 
@@ -187,6 +191,11 @@ fast-badge {
     display: block;
   }
 
+  #r159-home-banner img,
+  #r159-home-banner-overlay {
+    height: $card-width * 1.75;
+  }
+
   @include col-about;
 }
 
@@ -206,7 +215,20 @@ fast-badge {
 
   #r159-home-banner img,
   #r159-home-banner-overlay {
-    height: $card-width * 1.75;
+    height: $card-width * 1.5;
+  }
+
+
+  #r159-home-banner {
+    border-bottom-right-radius: v.$base-px-unit * 3;
+    border-bottom-left-radius: v.$base-px-unit * 3;
+  }
+
+  #r159-home-banner-overlay {
+    margin: v.$base-px-unit * -3;
+    border: v.$base-px-unit * 3 solid var(--neutral-layer-2);
+    border-bottom-right-radius: v.$base-px-unit * 6;
+    border-bottom-left-radius: v.$base-px-unit * 6;
   }
 
   @include col-about;
@@ -220,7 +242,6 @@ fast-badge {
 
   .r159-flex-sm {
     flex-basis: $card-width - (v.$base-px-unit * 10);
-    height: 640px;
 
     img {
       width: $card-width - (v.$base-px-unit * 10);
@@ -228,13 +249,17 @@ fast-badge {
     }
   }
 
-  .hide-xss {
+  .show-xxs {
+    display: inline;
+  }
+
+  .hide-xxs {
     display: none;
   }
 
   #r159-home-banner img,
   #r159-home-banner-overlay {
-    height: $card-width * 1.5;
+    height: $card-width * 1.25;
   }
 
   #r159-home-experience-left,
