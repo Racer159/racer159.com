@@ -22,10 +22,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it('should set darkMode', () => {
+  it('should set darkMode', async () => {
+    const mediaSpy = spyOn(window, 'matchMedia').and.returnValue({ matches: false } as MediaQueryList);
+
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
+    app.ngOnInit();
+    await fixture.whenStable();
+
     expect(app.darkMode).toEqual(true);
+    expect(mediaSpy).toHaveBeenCalledWith('(prefers-color-scheme: light)');
   });
 
   it('should render toolbar label', () => {
