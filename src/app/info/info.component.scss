@@ -8,7 +8,7 @@ $gap: v.$base-px-unit * 6;
   gap: $gap;
 }
 
-#info {
+.info {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -120,7 +120,7 @@ $gap: v.$base-px-unit * 6;
     gap: 0;
   }
 
-  #info {
+  .info {
     flex: 0 1 300px;
     font-size: 0.75em;
   }
@@ -139,7 +139,7 @@ $gap: v.$base-px-unit * 6;
     gap: v.$base-px-unit * 4;
   }
 
-  #info {
+  .info {
     padding: 0 v.$base-px-unit * 3;
     gap: v.$base-px-unit;
     font-size: 0.7em;

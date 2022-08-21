@@ -54,8 +54,8 @@ describe('AppComponent', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('#r159-copyright')?.textContent).toContain('© ' + new Date().getFullYear());
-    expect(compiled.querySelector('#r159-footer')?.textContent).toContain('π');
+    expect(compiled.querySelector('#copyright')?.textContent).toContain('© ' + new Date().getFullYear());
+    expect(compiled.querySelector('#footer')?.textContent).toContain('π');
   });
 
   it('should render the git menu', async () => {
@@ -63,7 +63,7 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     const gitButton = fixture.nativeElement.querySelectorAll('fast-toolbar div[slot="end"] fast-button').item(2) as HTMLElement;
-    expect(compiled.querySelector('#r159-git-menu')?.classList).toContain('hidden');
+    expect(compiled.querySelector('#git-menu')?.classList).toContain('hidden');
 
     gitButton.click();
 
@@ -71,6 +71,6 @@ describe('AppComponent', () => {
 
     await fixture.whenStable();
 
-    expect(compiled.querySelector('#r159-git-menu')?.classList).toContain('shown');
+    expect(compiled.querySelector('#git-menu')?.classList).toContain('shown');
   });
 });
