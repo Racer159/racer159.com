@@ -13,6 +13,14 @@ import {
 } from '@microsoft/fast-colors';
 import { DOCUMENT } from '@angular/common';
 
+interface CheckboxEventTarget extends EventTarget {
+  checked: boolean;
+}
+
+interface CheckboxEvent extends Event {
+  target: CheckboxEventTarget;
+}
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -20,7 +28,7 @@ import { DOCUMENT } from '@angular/common';
 })
 export class AppComponent implements OnInit {
   // lightmode and color handling
-  darkMode = false;
+  lightMode = true;
   lightModeToggleCount = 0;
   colors = ["#ff0000", "#ff7f00", "#ffd700", "#008000", "#4d4dff", "#4b0082", "#9400d3"];
   colorsInterval: undefined | number;
@@ -40,17 +48,17 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-      this.darkMode = false;
+      this.lightMode = true;
       baseLayerLuminance.setValueFor(document.body, StandardLuminance.LightMode);
     } else {
-      this.darkMode = true;
+      this.lightMode = false;
       baseLayerLuminance.setValueFor(document.body, 0.15);
     }
   }
   
-  toggleLightMode() {
+  toggleLightMode(event: Event) {
     this.lightModeToggleCount++;
-    this.darkMode = !this.darkMode;
+    this.lightMode = (event as CheckboxEvent).target.checked;
 
     if (this.lightModeToggleCount > 7) {
       this.lightModeToggleCount = 0;
@@ -72,7 +80,7 @@ export class AppComponent implements OnInit {
       }
     }
 
-    const baseLuminance = this.darkMode ? 0.15 : StandardLuminance.LightMode;
+    const baseLuminance = this.lightMode ? StandardLuminance.LightMode : 0.15;
     baseLayerLuminance.setValueFor(this.document.body, baseLuminance);
   }
 

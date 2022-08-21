@@ -5,7 +5,7 @@
       <span class="no-print" id="r159-title">Racer159</span>
     </a>
     <div slot="end">
-      <fast-switch (change)="toggleLightMode()" [checked]="!darkMode" aria-label="Toggle Light Mode">
+      <fast-switch [checked]="lightMode" (change)="toggleLightMode($event)" aria-label="Toggle Light Mode">
       </fast-switch>
       <fast-button appearance="stealth" (click)="gotoRoute('/info')" aria-label="Page Info">
         <i class="far fa-lg fa-info-circle"></i>
