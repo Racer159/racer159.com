@@ -1,7 +1,7 @@
 @use "../variables" as v;
 
 $toolbar-height: calc(
-  (((var(--base-height-multiplier) + var(--density) + 3) * var(--design-unit) + (var(--focus-stroke-width) * 1.5)) * 1px)
+  ((var(--base-height-multiplier) + var(--density) + 3) * var(--design-unit) + (var(--focus-stroke-width) * 1.5)) * 1px
 );
 
 footer {
