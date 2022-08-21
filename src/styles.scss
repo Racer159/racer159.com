@@ -21,7 +21,9 @@ fast-divider,
 fast-button,
 a,
 body,
-img {
+img,
+footer,
+#main-wrapper {
   transition:
     background-color var(--anim-length) var(--anim-style),
     color var(--anim-length) var(--anim-style),
