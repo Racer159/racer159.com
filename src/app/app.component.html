@@ -1,7 +1,7 @@
 <nav>
-  <fast-toolbar id="r159-toolbar" style="width: 100%">
+  <fast-toolbar id="toolbar" style="width: 100%">
     <a [routerLink]="'/'" slot="label">
-      <img src="/assets/icon.png" class="r159-header-icon" alt="Pixelated motorcycle and truck" />
+      <img src="/assets/icon.png" class="header-icon" alt="Pixelated motorcycle and truck" />
       <span class="no-print" id="r159-title">Racer159</span>
     </a>
     <div slot="end">
@@ -21,7 +21,7 @@
       <a class="print-only" href="https://racer159.com">https://racer159.com</a>
     </div>
   </fast-toolbar>
-  <fast-menu id="r159-git-menu" class="hidden" [class]="showGitMenu ? 'shown' : 'hidden'">
+  <fast-menu id="git-menu" class="hidden" [class]="showGitMenu ? 'shown' : 'hidden'">
     <fast-menu-item (click)="gotoURL($event, 'https://github.com/Racer159')" (keydown)="gotoURL($event, 'https://github.com/Racer159')"><i class="fab fa-lg fa-github" slot="start"></i>
       <p>GitHub</p>
     </fast-menu-item>
@@ -33,25 +33,25 @@
       <p>Repo One</p>
     </fast-menu-item>
   </fast-menu>
-  <div id="r159-menu-cover" [class]="showGitMenu ? 'shown' : 'hidden'" (click)="toggleGitMenu()"></div>
+  <div id="menu-cover" [class]="showGitMenu ? 'shown' : 'hidden'" (click)="toggleGitMenu()"></div>
 </nav>
 
-<main id="r159-content">
+<main id="content">
   <router-outlet></router-outlet>
 </main>
 
 <footer>
-  <div id="r159-notifications" class="hidden" [class]="showToast ? 'shown' : 'hidden'">
+  <div id="notifications" class="hidden" [class]="showToast ? 'shown' : 'hidden'">
     <span *ngIf="developerSteps > 0">You are now {{developerSteps}} {{developerSteps != 1 ? "steps" : "step"}} away from
       being a developer.</span>
     <span *ngIf="developerSteps < 1">Developer mode has been turned on.</span>
   </div>
 
-  <a href="https://archive.org/details/CopyingIsNotTheft1080p" id="r159-copyright">
+  <a href="https://archive.org/details/CopyingIsNotTheft1080p" id="copyright">
     © 2022
   </a>
 
-  <a href="" id="r159-footer" (click)="handlePiClick($event)" (contextmenu)="noContext()">
+  <a href="" id="footer" (click)="handlePiClick($event)" (contextmenu)="noContext()">
     π
   </a>
 </footer>

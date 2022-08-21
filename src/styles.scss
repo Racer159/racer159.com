@@ -78,7 +78,7 @@ fast-card {
   background-color: var(--neutral-layer-1);
 }
 
-.r159-page-main {
+#page-main {
   max-width: v.$lg-min-width + (v.$base-px-unit * 10);
   width: calc(100vw - 200px);
   margin: v.$base-px-unit * 6 auto;
@@ -101,7 +101,7 @@ fast-card {
 }
 
 @mixin page-widen {
-  .r159-page-main {
+  #page-main {
     width: calc(100vw - v.$base-px-unit * 4);
     margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
   }

@@ -3,7 +3,7 @@
 $card-width: 380px;
 
 @mixin col-about {
-  #r159-home-about {
+  #about {
     flex-flow: column;
     gap: v.$base-px-unit * 2;
     padding: 0;
@@ -12,12 +12,12 @@ $card-width: 380px;
 }
 
 @mixin banner-border($radius-multiplier) {
-  #r159-home-banner {
+  #banner {
     border-bottom-right-radius: v.$base-px-unit * $radius-multiplier;
     border-bottom-left-radius: v.$base-px-unit * $radius-multiplier;
   }
 
-  #r159-home-banner-overlay {
+  #banner-overlay {
     margin: v.$base-px-unit * $radius-multiplier * -1;
     border: v.$base-px-unit * $radius-multiplier solid var(--neutral-layer-2);
     border-bottom-right-radius: v.$base-px-unit * $radius-multiplier * 2;
@@ -26,24 +26,24 @@ $card-width: 380px;
 }
 
 @mixin banner-height($height-multiplier) {
-  #r159-home-banner img,
-  #r159-home-banner-overlay {
+  #banner img,
+  #banner-overlay {
     height: $card-width * $height-multiplier;
   }
 
-  #r159-home-banner img.r159-lg {
+  #banner img.lg {
     width: $card-width * $height-multiplier * 10;
   }
 
-  #r159-home-banner img.r159-md {
+  #banner img.md {
     width: $card-width * $height-multiplier * 3;
   }
 
-  #r159-home-banner img.r159-sm {
+  #banner img.sm {
     width: $card-width * $height-multiplier * 2;
   }
 
-  #r159-home-banner img.r159-xs {
+  #banner img.xs {
     width: $card-width * $height-multiplier * 1.5;
   }
 }
@@ -67,7 +67,7 @@ fast-badge {
   margin: 0 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px) 0;
 }
 
-.r159-flex-sm {
+.exp-card {
   flex: 0 0 $card-width;
 
   img {
@@ -80,7 +80,7 @@ fast-badge {
   }
 }
 
-.r159-about-photo {
+.about-photo {
   background-color: var(--accent-fill-rest);
   border-radius: 50%;
   width: $card-width;
@@ -90,23 +90,23 @@ fast-badge {
     0 -1.9px 3.6px rgba(0, 0, 0, calc(0.13 * (2 - var(--background-luminance, 1))));
 }
 
-.r159-lg {
+.lg {
   display: block;
 }
 
-.r159-md {
+.md {
   display: none;
 }
 
-.r159-sm {
+.sm {
   display: none;
 }
 
-.r159-xs {
+.xs {
   display: none;
 }
 
-.show-xxs {
+.show-mobile {
   display: none;
 }
 
@@ -117,7 +117,7 @@ fast-badge {
 @include banner-border(4);
 @include banner-height(2);
 
-#r159-home-banner {
+#banner {
   position: fixed;
   overflow: hidden;
   width: 100%;
@@ -130,24 +130,24 @@ fast-badge {
   }
 }
 
-#r159-home-banner-overlay-wrapper {
+#banner-overlay-wrapper {
   overflow: hidden;
 }
 
-#r159-home-banner-overlay {
+#banner-overlay {
   width: 100%;
   box-shadow:
     inset 0 0 2.9px rgba(0, 0, 0, calc(0.11 * (2 - var(--background-luminance, 1)))),
     inset 0 -1.9px 3.6px rgba(0, 0, 0, calc(0.13 * (2 - var(--background-luminance, 1))));
 }
 
-#r159-home-main-wrapper {
+#main-wrapper {
   padding: v.$base-px-unit * 4 0;
   width: 100%;
   background: var(--neutral-layer-2);
 }
 
-#r159-home-main {
+#main {
   display: flex;
   flex-flow: row wrap;
   gap: v.$base-px-unit * 3;
@@ -157,7 +157,7 @@ fast-badge {
   justify-content: center;
 }
 
-#r159-home-about {
+#about {
   width: 100%;
   max-width: v.$md-min-width;
   display: flex;
@@ -166,36 +166,36 @@ fast-badge {
   padding: 0 v.$base-px-unit * 4;
 }
 
-#r159-home-skills {
+#skills{
   margin: v.$base-px-unit * 3 0 v.$base-px-unit;
 }
 
-#r159-home-experience-buttons {
+#experience-buttons {
   width: 100%;
   padding: 0 v.$base-px-unit * 2;
   height: 0;
 }
 
-#r159-home-experience-left,
-#r159-home-experience-right {
+#experience-left,
+#experience-right {
   position: relative;
   top: 333px;
   z-index: 50;
 }
 
-#r159-home-experience-left {
+#experience-left {
   float: left;
 }
 
-#r159-home-experience-right {
+#experience-right {
   float: right;
 }
 
-#r159-home-experience::-webkit-scrollbar {
+#experience::-webkit-scrollbar {
   display: none;
 }
 
-#r159-home-experience {
+#experience {
   width: 100%;
   display: flex;
   gap: v.$base-px-unit * 2;
@@ -205,21 +205,21 @@ fast-badge {
 }
 
 @media screen and (max-width: v.$md-max-width) and (min-width: v.$md-min-width) {
-  .r159-lg {
+  .lg {
     display: none;
   }
 
-  .r159-md {
+  .md {
     display: block;
   }
 }
 
 @media screen and (max-width: v.$sm-max-width) and (min-width: v.$sm-min-width) {
-  .r159-lg {
+  .lg {
     display: none;
   }
 
-  .r159-sm {
+  .sm {
     display: block;
   }
 
@@ -228,15 +228,15 @@ fast-badge {
 }
 
 @media screen and (max-width: v.$xs-max-width) {
-  .r159-lg {
+  .lg {
     display: none;
   }
 
-  .r159-xs {
+  .xs {
     display: block;
   }
 
-  #r159-home-main {
+  #main {
     width: calc(100vw - v.$base-px-unit * 4);
     margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
   }
@@ -247,12 +247,12 @@ fast-badge {
 }
 
 @media screen and (max-width: v.$xxs-max-width) {
-  .r159-about-photo {
+  .about-photo {
     width: $card-width - (v.$base-px-unit * 10);
     height: $card-width - (v.$base-px-unit * 10);
   }
 
-  .r159-flex-sm {
+  .exp-card {
     flex-basis: $card-width - (v.$base-px-unit * 10);
 
     img {
@@ -261,16 +261,16 @@ fast-badge {
     }
   }
 
-  .show-xxs {
+  .show-mobile {
     display: inline;
   }
 
-  .hide-xxs {
+  .hide-mobile {
     display: none;
   }
 
-  #r159-home-experience-left,
-  #r159-home-experience-right {
+  #experience-left,
+  #experience-right {
     top: 261px;
   }
 
@@ -278,7 +278,7 @@ fast-badge {
 }
 
 @media print {
-  .r159-flex-sm {
+  .exp-card {
     display: block;
     page-break-inside: avoid;
     box-shadow: none;
@@ -305,7 +305,7 @@ fast-badge {
     }
   }
 
-  #r159-home-banner {
+  #banner {
     position: relative;
 
     img {
@@ -313,12 +313,12 @@ fast-badge {
     }
   }
 
-  #r159-home-main-wrapper {
+  #main-wrapper {
     background: transparent;
     padding: 0;
   }
 
-  #r159-home-main {
+  #main {
     width: calc(100vw - v.$base-px-unit * 4);
     margin: 0 v.$base-px-unit * 2;
     display: inline;
@@ -328,14 +328,14 @@ fast-badge {
     }
   }
 
-  #r159-home-about {
+  #about {
     display: block;
     page-break-inside: avoid;
     padding: 0;
     margin-bottom: v.$base-px-unit * 4;
   }
 
-  #r159-home-experience {
+  #experience {
     display: inline;
   }
 

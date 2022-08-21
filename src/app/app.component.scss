@@ -8,14 +8,12 @@ footer {
   background: var(--neutral-layer-2);
 }
 
-#r159-toolbar {
+#toolbar {
   border-bottom: calc(var(--focus-stroke-width) * 1.5px) solid var(--accent-fill-rest);
   position: fixed;
   z-index: 100;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  border-radius: 0;
 
   [slot="label"] {
     font-size: var(--type-ramp-plus-2-font-size);
@@ -36,7 +34,7 @@ footer {
   }
 }
 
-.r159-header-icon {
+.header-icon {
   width: v.$base-px-unit * 4;
   height: v.$base-px-unit * 4;
   border-radius: 50%;
@@ -52,14 +50,14 @@ footer {
   object-fit: contain;
 }
 
-#r159-git-menu {
+#git-menu {
   z-index: 120;
   position: fixed;
   top: $toolbar-height;
   right: 0;
 }
 
-#r159-menu-cover {
+#menu-cover {
   z-index: 110;
   position: fixed;
   top: 0;
@@ -68,12 +66,12 @@ footer {
   bottom: 0;
 }
 
-#r159-content {
+#content {
   padding-top: $toolbar-height;
 }
 
-#r159-copyright,
-#r159-footer {
+#copyright,
+#footer {
   position: fixed;
   z-index: 100;
   bottom: 0;
@@ -81,28 +79,28 @@ footer {
   text-decoration: none;
 }
 
-#r159-copyright {
+#copyright {
   left: 0;
   padding: v.$base-px-unit * 3 v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px);
 }
 
-#r159-footer {
+#footer {
   right: 0;
   padding: v.$base-px-unit * 3 calc(var(--design-unit) * 1px) calc(var(--design-unit) * 1px) v.$base-px-unit * 3;
 }
 
-#r159-notifications {
+#notifications {
   @include v.notifications;
 }
 
 @media screen and (max-width: v.$xs-max-width) {
-  #r159-footer,
-  #r159-copyright {
+  #footer,
+  #copyright {
     position: relative;
     display: inline-block;
   }
 
-  #r159-footer {
+  #footer {
     float: right;
   }
 
@@ -117,14 +115,14 @@ footer {
     display: none;
   }
 
-  #r159-toolbar {
+  #toolbar {
     width: 100vw !important;
     position: absolute;
     border-radius: 0;
     padding: var(--toolbar-item-gap) 0;
   }
 
-  #r159-content {
+  #content {
     padding-top: 34px;
   }
 
