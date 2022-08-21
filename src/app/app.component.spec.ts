@@ -30,7 +30,7 @@ describe('AppComponent', () => {
     app.ngOnInit();
     await fixture.whenStable();
 
-    expect(app.darkMode).toEqual(true);
+    expect(app.lightMode).toEqual(false);
     expect(mediaSpy).toHaveBeenCalledWith('(prefers-color-scheme: light)');
   });
 
