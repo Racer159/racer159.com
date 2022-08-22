@@ -23,7 +23,8 @@ a,
 body,
 img,
 footer,
-#main-wrapper {
+#main-wrapper,
+#banner-overlay {
   transition:
     background-color var(--anim-length) var(--anim-style),
     color var(--anim-length) var(--anim-style),
