@@ -41,7 +41,7 @@
 </main>
 
 <footer>
-  <div id="notifications" class="hidden" [class]="showToast ? 'shown' : 'hidden'">
+  <div id="notifications" class="hidden" [class]="showToast ? 'shown' : 'hidden'" role="alert">
     <span *ngIf="developerSteps > 0">You are now {{developerSteps}} {{developerSteps != 1 ? "steps" : "step"}} away from
       being a developer.</span>
     <span *ngIf="developerSteps < 1">Developer mode has been turned on.</span>
