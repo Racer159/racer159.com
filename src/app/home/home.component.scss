@@ -25,26 +25,11 @@ $card-width: 380px;
   }
 }
 
-@mixin banner-height($height-multiplier) {
+@mixin banner-height($height-multiplier, $width-multiplier) {
   #banner img,
   #banner-overlay {
     height: $card-width * $height-multiplier;
-  }
-
-  #banner img.lg {
-    width: $card-width * $height-multiplier * 10;
-  }
-
-  #banner img.md {
-    width: $card-width * $height-multiplier * 3;
-  }
-
-  #banner img.sm {
-    width: $card-width * $height-multiplier * 2;
-  }
-
-  #banner img.xs {
-    width: $card-width * $height-multiplier * 1.5;
+    width: $card-width * $height-multiplier * $width-multiplier;
   }
 }
 
@@ -115,7 +100,7 @@ fast-badge {
 }
 
 @include banner-border(4);
-@include banner-height(2);
+@include banner-height(2, 10);
 
 #banner {
   position: fixed;
@@ -213,7 +198,7 @@ fast-badge {
     display: block;
   }
 
-  @include banner-height(1.75);
+  @include banner-height(1.75, 3);
 }
 
 @media screen and (max-width: v.$sm-max-width) and (min-width: v.$sm-min-width) {
@@ -225,7 +210,7 @@ fast-badge {
     display: block;
   }
 
-  @include banner-height(1.66);
+  @include banner-height(1.66, 2);
   @include col-about;
 }
 
@@ -243,7 +228,7 @@ fast-badge {
     margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
   }
 
-  @include banner-height(1.33);
+  @include banner-height(1.33, 1.5);
   @include banner-border(3);
   @include col-about;
 }
@@ -278,7 +263,7 @@ fast-badge {
     top: calc(100vw - v.$base-px-unit * 9);
   }
 
-  @include banner-height(1.15);
+  @include banner-height(1.15, 1.5);
 }
 
 @media print {
