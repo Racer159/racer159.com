@@ -212,6 +212,8 @@ fast-badge {
   .md {
     display: block;
   }
+
+  @include banner-height(1.75);
 }
 
 @media screen and (max-width: v.$sm-max-width) and (min-width: v.$sm-min-width) {
@@ -223,7 +225,7 @@ fast-badge {
     display: block;
   }
 
-  @include banner-height(1.75);
+  @include banner-height(1.66);
   @include col-about;
 }
 
@@ -241,23 +243,25 @@ fast-badge {
     margin: v.$base-px-unit * 6 v.$base-px-unit * 2 0;
   }
 
-  @include banner-height(1.5);
+  @include banner-height(1.33);
   @include banner-border(3);
   @include col-about;
 }
 
 @media screen and (max-width: v.$xxs-max-width) {
   .about-photo {
-    width: $card-width - (v.$base-px-unit * 10);
-    height: $card-width - (v.$base-px-unit * 10);
+    width: calc(100vw - v.$base-px-unit * 4);
+    height: calc(100vw - v.$base-px-unit * 4);
+    max-width: $card-width - (v.$base-px-unit * 10);
+    max-height: $card-width - (v.$base-px-unit * 10);
   }
 
   .exp-card {
-    flex-basis: $card-width - (v.$base-px-unit * 10);
+    flex-basis: calc(100vw - v.$base-px-unit * 4);
 
     img {
-      width: $card-width - (v.$base-px-unit * 10);
-      height: $card-width - (v.$base-px-unit * 10);
+      width: calc(100vw - v.$base-px-unit * 4);
+      height: calc(100vw - v.$base-px-unit * 4);
     }
   }
 
@@ -271,10 +275,10 @@ fast-badge {
 
   #experience-left,
   #experience-right {
-    top: 261px;
+    top: calc(100vw - v.$base-px-unit * 9);
   }
 
-  @include banner-height(1.25);
+  @include banner-height(1.15);
 }
 
 @media print {
