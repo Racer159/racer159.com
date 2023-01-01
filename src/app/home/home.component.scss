@@ -29,6 +29,9 @@ $card-width: 380px;
   #banner img,
   #banner-overlay {
     height: $card-width * $height-multiplier;
+  }
+
+  #banner img {
     width: $card-width * $height-multiplier * $width-multiplier;
   }
 }
