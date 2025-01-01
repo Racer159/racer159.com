@@ -21,7 +21,8 @@
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": {
-              "base": "dist/racer159-com"
+              "base": "dist/racer159-com",
+              "browser": "."
             },
             "index": "src/index.html",
             "polyfills": [
