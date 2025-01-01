@@ -1,6 +1,6 @@
 {
   "name": "racer159-com",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "racer159",
   "license": "MIT",
   "scripts": {
@@ -19,23 +19,21 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^14.1.2",
-    "@angular/common": "^14.1.2",
-    "@angular/compiler": "^14.1.2",
-    "@angular/core": "^14.1.2",
-    "@angular/forms": "^14.1.2",
-    "@angular/platform-browser": "^14.1.2",
-    "@angular/platform-browser-dynamic": "^14.1.2",
-    "@angular/router": "^14.1.2",
+    "@angular/animations": "^19.0.5",
+    "@angular/common": "^19.0.5",
+    "@angular/compiler": "^19.0.5",
+    "@angular/core": "^19.0.5",
+    "@angular/forms": "^19.0.5",
+    "@angular/platform-browser": "^19.0.5",
+    "@angular/platform-browser-dynamic": "^19.0.5",
+    "@angular/router": "^19.0.5",
     "@microsoft/fast-components": "2.30.5",
-    "rxjs": "^7.5.6",
-    "tslib": "^2.4.0",
-    "zone.js": "^0.11.8"
+    "zone.js": "^0.15.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^14.1.2",
-    "@angular/cli": "^14.1.2",
-    "@angular/compiler-cli": "^14.1.2",
+    "@angular-devkit/build-angular": "^19.0.6",
+    "@angular/cli": "^19.0.6",
+    "@angular/compiler-cli": "^19.0.5",
     "@cypress/schematic": "^2.0.2",
     "@types/jasmine": "~4.0.3",
     "@types/node": "^18.7.3",
@@ -53,6 +51,6 @@
     "karma-jasmine-html-reporter": "~2.0.0",
     "stylelint": "^14.10.0",
     "stylelint-config-standard-scss": "^5.0.0",
-    "typescript": "~4.7.4"
+    "typescript": "~5.6.3"
   }
 }

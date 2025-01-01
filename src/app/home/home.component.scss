@@ -301,7 +301,7 @@ fast-badge {
     position: relative;
 
     img {
-      height: 275px;
+      height: 250px;
     }
   }
 
@@ -324,7 +324,7 @@ fast-badge {
     display: block;
     page-break-inside: avoid;
     padding: 0;
-    margin-bottom: v.$base-px-unit * 4;
+    margin-bottom: v.$base-px-unit;
   }
 
   #experience {
