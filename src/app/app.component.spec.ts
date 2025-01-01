@@ -7,7 +7,10 @@ describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       providers: [
-        provideRouter([])
+        provideRouter([{
+          path: '',
+          component: AppComponent,
+        }]),
       ],
       declarations: [
         AppComponent
