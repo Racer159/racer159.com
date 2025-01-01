@@ -1,6 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
+import { RouterModule } from '@angular/router';
 
 import { DeveloperComponent } from './developer.component';
 
@@ -10,7 +10,7 @@ describe('DeveloperComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ RouterTestingModule ],
+      imports: [ RouterModule ],
       declarations: [ DeveloperComponent ],
       schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
     })
